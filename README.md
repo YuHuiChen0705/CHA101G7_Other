@@ -1,2 +1,2 @@
 # CHA101G7_Other
-formal git for &amp; sql  &amp; other file
+formal git for sql  &amp; other file
