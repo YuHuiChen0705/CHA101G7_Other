@@ -1,0 +1,85 @@
+.course-table {
+    position: relative;
+    align-items: center;
+    color: gray;
+    width: 900px auto;
+    height: 150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 30px;
+}
+
+/* 星期欄位 */
+.course-box {
+    position: sticky;
+    top: 70px;
+    border: dashed 1px;
+    background-color: rgb(255, 255, 235);
+    height: 150px;
+    width: 100%;
+
+    font-size: 100%;
+}
+
+.course-table-day {
+    /* height: 100%; */
+    text-align: center;
+    /* align-items: center; */
+    font-size: 14pt;
+    /* border-right: dashed 1px; */
+    margin-top: 10px;
+}
+
+
+
+/* 週歷整個 */
+.schedule-box {
+    height: 900px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr)
+}
+
+/* Weekday */
+.mon {
+    background-color: white;
+}
+
+.tue {
+    background-color: rgb(222, 222, 222);
+}
+
+.wed {
+    background-color: white;
+}
+
+.thu {
+    background-color: rgb(222, 222, 222);
+}
+
+.fri {
+    background-color: white;
+}
+
+.sat {
+    background-color: rgb(222, 222, 222);
+}
+
+.sun {
+    background-color: white;
+}
+
+/* 時段 */
+.tr {
+    /* background-color: rgb(222, 222, 222); */
+    height: 300px;
+    width: 100%;
+    /* display: flex; */
+    border: dashed 1px;
+    text-align: center;
+    align-items: center;
+
+
+    /* text-align: center; */
+
+}

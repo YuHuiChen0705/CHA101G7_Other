@@ -1,0 +1,6 @@
+.appliedcourse-breadcrumb .breadcrumb-bg-about {
+    background: url(../images/banner20.jpg) no-repeat top;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
