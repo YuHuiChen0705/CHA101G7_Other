@@ -128,6 +128,7 @@
         </div>
       </div>
     </nav>
+
     <section class="py-5 bg-light " style="height: 50vh" ;>
       <div class="container">
         <div class="row bg-white shadow-sm rounded-3">
@@ -144,11 +145,10 @@
                 <tr>
                   <th>編號</th>
                   <th>教練</th>
-                  <th>開課日期</th>
-                  <th>時段</th>
-                  <th>報名結束截止</th>
+                  <th>報名開始時間</th>
+                  <th>報名截止時間</th>
                   <th>報名人數上限</th>
-                  <th>已報名人數</th>
+                  <th>報名人數下限</th>
                   <th>價格</th>
                   <th>堂數</th>
                   <th>報名</th>
@@ -156,23 +156,15 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td><button type="button" class="btn btn-dark">Dark</button></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+                  <td>1</td>
+                  <td>XXX</td>
+                  <td>2023-01-01</td>
+                  <td>2023-01-09</td>
+                  <td>10</td>
+                  <td>2</td>
+                  <td>NT$2,000.00</td>
+                  <td>4</td>
+                  <td><a href="courseForm.html" class="btn btn-dark">我要報名</a></td>
                 </tr>
               </tbody>
             </table>
@@ -182,107 +174,108 @@
     </section>
   </main>
 
-  <!-- footers 20 -->
-  <section class="w3l-footers-20">
-    <div class="footers20">
-      <div class="container">
-        <div class="footers20-content">
-          <div class="d-grid grid-col-4 grids-content">
-            <div class="column">
-              <h4>客服專區</h4>
-              <a class="foot" href="mailto:mail@example.com">
-                <p>聯絡我們</p>
-                <p class="contact-mail mt-1"><span class="lnr lnr-envelope"></span>service_business@tibame.com</p>
-              </a>
-              <a class="foot" href="tel:+1-2345-678-11">
-                <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
-                </p>
-              </a>
-              <a class="foot" href="contact.html">
-                <p> 常見問題</p>
-              </a>
-            </div>
-            <div class="column">
-              <h4>師資團隊</h4>
-              <a class="foot" href="coach.html">
-                <p class="coach-list mt-2"><span class="lnr lnr-coach-handset"></span> 教練介紹
-                </p>
-              </a>
-              <a class="foot" href="course.html">
-                <p class="classes-list mt-2"><span class="lnr lnr-classes-handset"></span> 團課介紹
-                </p>
-              </a>
-              <a class="foot" href="course.html">
-                <p class="classes-list mt-2"><span class="lnr lnr-classes-mounth"></span> 當月課表
-                </p>
-              </a>
-            </div>
+  <footer>
+    <section class="w3l-footers-20">
+      <div class="footers20">
+        <div class="container">
+          <div class="footers20-content">
+            <div class="d-grid grid-col-4 grids-content">
+              <div class="column">
+                <h4>客服專區</h4>
+                <a class="foot" href="mailto:mail@example.com">
+                  <p>聯絡我們</p>
+                  <p class="contact-mail mt-1"><span class="lnr lnr-envelope"></span>service_business@tibame.com</p>
+                </a>
+                <a class="foot" href="tel:+1-2345-678-11">
+                  <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
+                  </p>
+                </a>
+                <a class="foot" href="contact.html">
+                  <p> 常見問題</p>
+                </a>
+              </div>
+              <div class="column">
+                <h4>師資團隊</h4>
+                <a class="foot" href="coach.html">
+                  <p class="coach-list mt-2"><span class="lnr lnr-coach-handset"></span> 教練介紹
+                  </p>
+                </a>
+                <a class="foot" href="course.html">
+                  <p class="classes-list mt-2"><span class="lnr lnr-classes-handset"></span> 團課介紹
+                  </p>
+                </a>
+                <a class="foot" href="course.html">
+                  <p class="classes-list mt-2"><span class="lnr lnr-classes-mounth"></span> 當月課表
+                  </p>
+                </a>
+              </div>
 
-            <div class="column">
-              <h4>商城</h4>
-              <a class="foot" href="優惠活動列表">
-                <p>優惠活動</p>
-              </a>
+              <div class="column">
+                <h4>商城</h4>
+                <a class="foot" href="優惠活動列表">
+                  <p>優惠活動</p>
+                </a>
+              </div>
+              
+              <div class="column">
+                <h4>營業時間</h4>
+                <p>We are working on</p>
+                <p class="mt-1"><span class="lnr lnr-clock"></span> <strong>Mon - Fri</strong> : 7am to 9pm
+                </p>
+                <p class="mt-1"><span class="lnr lnr-clock"></span> <strong>Sat - Sun</strong> : 10 am to 8
+                  pm
+                </p>
+                <p class="contact-map mt-2"><span class="lnr lnr-map-marker"></span>場館位置</p>
 
-            </div>
-            <div class="column">
-              <h4>營業時間</h4>
-              <p>We are working on</p>
-              <p class="mt-1"><span class="lnr lnr-clock"></span> <strong>Mon - Fri</strong> : 7am to 9pm
-              </p>
-              <p class="mt-1"><span class="lnr lnr-clock"></span> <strong>Sat - Sun</strong> : 10 am to 8
-                pm
-              </p>
-              <p class="contact-map mt-2"><span class="lnr lnr-map-marker"></span>場館位置</p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2490359444073!2d121.22244777443302!3d24.957640341363774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1684388144187!5m2!1szh-TW!2stw"
+                  width="280" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2490359444073!2d121.22244777443302!3d24.957640341363774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1684388144187!5m2!1szh-TW!2stw"
-                width="280" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+              </div>
             </div>
-          </div>
-          <div class="d-grid grid-col-3 grids-content1 bottom-border">
-            <div class="columns copyright-grid align-self">
-              <p class="copy-footer-29">© 2023 Workout | Designed by no.7 team</p>
-            </div>
-            <div class="columns text-lg-right social-grid">
-              <ul class="social">
-                <li><a href="#url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
-                <li><a href="#url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
-                <li><a href="#url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
-              </ul>
+            <div class="d-grid grid-col-3 grids-content1 bottom-border">
+              <div class="columns copyright-grid align-self">
+                <p class="copy-footer-29">© 2023 Workout | Designed by no.7 team</p>
+              </div>
+              <div class="columns text-lg-right social-grid">
+                <ul class="social">
+                  <li><a href="#url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                  <li><a href="#url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+                  <li><a href="#url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <!-- 回到最頂部 -->
+      <button onclick="topFunction()" id="movetop" title="Go to top" class="bg-dark">
+        &#10548;
+      </button>
+    </section>
+  </footer>
 
-    <!-- 回到最頂部 -->
-    <button onclick="topFunction()" id="movetop" title="Go to top" class="bg-dark">
-      &#10548;
-    </button>
-    <script>
-      // When the user scrolls down 20px from the top of the document, show the button
-      window.onscroll = function () {
-        scrollFunction()
-      };
-      function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("movetop").style.display = "block";
-        } else {
-          document.getElementById("movetop").style.display = "none";
-        }
+  <!--回到最頂部 -->
+  <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction()
+    };
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("movetop").style.display = "block";
+      } else {
+        document.getElementById("movetop").style.display = "none";
       }
-      function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      }
-    </script>
-    <!-- /回到最頂部 -->
-  </section>
+    }
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
 
-  <!-- JS -->
+  <!-- BootStrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
     crossorigin="anonymous"></script>
@@ -296,9 +289,7 @@
 
   <!-- libhtbox -->
   <script src="assets/js/lightbox-plus-jquery.min.js"></script>
-
   <script src="assets/js/owl.carousel.js"></script>
-
   <script src="assets/js/bootstrap.min.js"></script>
 
 
@@ -307,10 +298,8 @@
 
 
 
-
+  <!-- 導覽列 -->
   <script>
-
-    // 導覽列
     $(function () {
       $('.navbar-toggler').click(function () {
         $('body').toggleClass('noscroll');
@@ -349,54 +338,6 @@
     }
 
     $('s1').html(stars);
-
-
-
-
-
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
-      },
-      buttonsStyling: false
-    })
-
-
-    // 確認報名按鈕
-    $("button").on("click", function () {
-      swalWithBootstrapButtons.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, cancel!',
-        reverseButtons: true
-      }).then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          )
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
-          )
-        }
-      })
-
-    })
-
-
-
-
   </script>
 
 </body>

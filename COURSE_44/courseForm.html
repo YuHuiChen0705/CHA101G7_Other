@@ -52,7 +52,7 @@
           <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
           <span class="navbar-toggler-icon fa icon-close fa-times"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
@@ -121,28 +121,18 @@
                 <table class="table text-center align-middle ">
                   <thead>
                     <tr>
-                      <th>編號</th>
-                      <th>教練</th>
-                      <th>開課日期</th>
-                      <th>時段</th>
-                      <th>報名結束截止</th>
-                      <th>報名人數上限</th>
-                      <th>已報名人數</th>
-                      <th>價格</th>
-                      <th>堂數</th>
-                      <th>報名</th>
+                      <td>編號</td>
+                      <td>教練</td>
+                      <td>價格</td>
+                      <td>堂數</td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
-                      <td><button type="button" class="btn btn-dark">Dark</button></td>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                      <td>@mdo</td>
+                      <td>編號</td>
+                      <td>教練</td>
+                      <td>價格</td>
+                      <td>堂數</td>
                     </tr>
                 </table>
                 <hr class="my-2">
@@ -251,29 +241,28 @@
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2490359444073!2d121.22244777443302!3d24.957640341363774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1684388144187!5m2!1szh-TW!2stw"
                   width="280" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <div class="d-grid grid-col-3 grids-content1 bottom-border">
-              <div class="columns copyright-grid align-self">
-                <p class="copy-footer-29">© 2023 Workout | Designed by no.7 team</p>
               </div>
-              <div class="columns text-lg-right social-grid">
-                <ul class="social">
-                  <li><a href="#url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
-                  <li><a href="#url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
-                  <li><a href="#url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
-                </ul>
+              <div class="d-grid grid-col-3 grids-content1 bottom-border">
+                <div class="columns copyright-grid align-self">
+                  <p class="copy-footer-29">© 2023 Workout | Designed by no.7 team</p>
+                </div>
+                <div class="columns text-lg-right social-grid">
+                  <ul class="social">
+                    <li><a href="#url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                    <li><a href="#url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+                    <li><a href="#url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <!-- 回到最頂部 -->
+        <button onclick="topFunction()" id="movetop" title="Go to top" class="bg-dark">
+          &#10548;
+        </button>
   </footer>
 
-
-  <!-- 回到最頂部 -->
-  <button onclick="topFunction()" id="movetop" title="Go to top" class="bg-dark">
-    &#10548;
-  </button>
   <script>
     // When the user scrolls down 20px from the top of the document, show the button
     window.onscroll = function () {
@@ -291,8 +280,7 @@
       document.documentElement.scrollTop = 0;
     }
   </script>
-  <!-- /回到最頂部 -->
-  </section>
+
 
   <!-- JS BootStrap-->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -356,46 +344,6 @@
       stars += '</svg>';
     }
     $('s1').html(stars);
-  </script>
-
-  <!--確認報名-->
-  <script>
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: 'btn btn-success',
-        cancelButton: 'btn btn-danger'
-      },
-      buttonsStyling: false
-    })
-    $("#check").on("click", function () {
-      swalWithBootstrapButtons.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonText: 'Yes, delete it!',
-        cancelButtonText: 'No, cancel!',
-        reverseButtons: true
-      }).then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          )
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
-          )
-        }
-      })
-    })
-
   </script>
 </body>
 
