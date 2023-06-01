@@ -1,0 +1,490 @@
+<!-- 
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+
+<!doctype html>
+<html lang="zh-tw">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Workout - Sports Category Responsive Website Template | Classes : W3layouts</title>
+
+  <!-- 字體樣式 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+  </style>
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css">
+
+  <!-- bootstrap5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <style>
+    /* 連結底線設定 */
+    a.foot {
+      text-decoration: underline;
+      color: black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!--header-->
+  <header id="site-header" class="fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg stroke">
+        <h1> <a class="navbar-brand" href="index.html">
+            <span class="lnr lnr-bicycle"></span>Give Me Gym
+          </a></h1>
+        <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+          <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">首頁<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item @@about__active">
+              <a class="nav-link" href="coach.html">私人教練</a>
+            </li>
+            <li class="nav-item @@classes__active">
+              <a class="nav-link" href="course.html">團課課程</a>
+            </li>
+            <li class="nav-item @@contact__active">
+              <a class="nav-link" href="contact.html">線上商城</a>
+            </li>
+            <li class="nav-item @@contact__active">
+              <a class="nav-link" href="contact.html">常見問題</a>
+            </li>
+            <li class="nav-item @@contact__active">
+              <a class="nav-link" href="contact.html">會員中心</a>
+            </li>
+            <!--/search-right-->
+            <div class="search-right">
+              <a href="#search" title="search"><span class="fa fa-search" aria-hidden="true"></span></a>
+              <!-- search popup -->
+              <div id="search" class="pop-overlay">
+                <div class="popup">
+
+                  <form action="#" method="GET" class="search-box">
+                    <input type="search" placeholder="Enter Keyword" name="search" required="required" autofocus="">
+                    <button type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
+                  </form>
+
+                </div>
+                <a class="close" href="#close">×</a>
+              </div>
+              <!-- /search popup -->
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!--團課標題-->
+  <main>
+    <section class="w3l-breadcrumb">
+      <div class="breadcrumb-bg breadcrumb-bg-classes py-5">
+        <div class="container py-lg-5 py-md-3">
+          <h3 class="title-big text-center">團課課程</h3>
+          <p class="mt-3">線上報名團課</p>
+        </div>
+      </div>
+    </section>
+    <!--/團課標題-->
+
+    <!-- 編輯區 -->
+    <nav class="navbar navbar-expand-xl navbar-light bg-light py-4" id="nm">
+      <div class="container">
+        <div class="collapse navbar-collapse fs-5" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto ">
+            <li class="nav-item px-3 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                有氧課程
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">戰鬥有氧</a></li>
+                <li><a class="dropdown-item" href="#">Zumba</a></li>
+                <li><a class="dropdown-item" href="#r1">艾克斯有氧</a></li>
+              </ul>
+            </li>
+            <li class="nav-item px-3 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                瑜珈課程
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#r2">熱瑜珈</a></li>
+                <li><a class="dropdown-item" href="#r3">阿斯坦加瑜珈</a></li>
+                <li><a class="dropdown-item" href="#r4">和緩瑜珈</a></li>
+                <li><a class="dropdown-item" href="#r5">皮拉提斯</a></li>
+              </ul>
+            </li>
+            <li class="nav-item px-3 dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                飛輪課程
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#r6">入門飛輪</a></li>
+                <li><a class="dropdown-item" href="#r7">燃脂耐力</a></li>
+                <li><a class="dropdown-item" href="#r8">肌力雕塑</a></li>
+              </ul>
+            </li>
+            <li class="nav-item px-3 ">
+              <a class="nav-link" href="#r9">攀岩類別</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="#r10">查看課表</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    </section>
+    <section>
+      <div data-bs-spy="scroll" data-bs-offset="0" class="container-fluid" data-bs-target="#nm" tabindex="0">
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6">
+            <div class="text-center px-2 py-5 p-lg-7">
+              <h2 class="py-3">戰鬥有氧</h2>
+              <p>戰鬥有氧是一種充滿力量的有氧訓練，讓你能得到完全釋放。<br />
+                這種激烈又充滿活力的課程靈感來自武術，並吸收了其他多元的運動，<br />
+                如空手道，拳擊，跆拳道，太極拳和泰拳。<br />
+                透過充滿活力的音樂和專業的教練，及進階的有氧健身方式。</p>
+              <a href="courseform.html" class="btn btn-dark ">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6"
+            style="background:url('assets/images/body-combat1.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6 order-lg-2 order-1">
+            <div class="text-center px-2 py-5 p-lg-7">
+              <h2 class="py-3" id="r1">Zumba</h2>
+              <p>Zumba®有氧就像是和你的好朋友跳舞狂歡一整晚，是一種會讓你感受到強大力量的舞蹈形式！<br />
+                你可以期待在課程裡能燃燒超過500卡路里的熱量！</p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1 order-2"
+            style="background:url('assets/images/zumba1.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6">
+            <div class="text-center px-2 py-5 p-lg-7">
+              <h2 class="py-3" id="r2">艾克斯有氧</h2>
+              <p>結合拉丁舞、森巴、拳擊、Hip Hop、啦啦隊舞、寶萊塢舞、性感毛巾舞、百老匯爵士等</p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6"
+            style="background:url('assets/images/hiphop.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6 order-lg-2 order-1">
+            <div class="text-center px-2 py-5 p-lg-5">
+              <h2 class="py-3" id="r3">熱瑜珈</h2>
+              <p>熱瑜珈以哈達瑜珈為基礎。</br>在高溫環境中(攝氏36度到40度)，配合呼吸，進行一套約26到42個體位的肢體伸展動作。助於增加體內新陳代謝和排毒有顯著的功效。</p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1 order-2"
+            style="background:url('assets/images/hotYoga.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6">
+            <div class="text-center px-2 py-5 p-lg-5">
+              <h2 class="py-3" id="r4">阿斯坦加瑜珈</h2>
+              <p>
+                以力量為主的瑜珈，大部分的時間都以訓練身體為基準，</br>用強大的下肢力量進行扎根的動作，確實的讓自己的身體達到穩定的效果藉由每次拜日式時變換動作，讓身體呈現在沒有休息的狀態之下，是一堂可以訓練體能的力量瑜珈。
+              </p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6"
+            style="background:url('assets/images/atlyoga.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6 order-lg-2 order-1">
+            <div class="text-center px-2 py-5 p-lg-5">
+              <h2 class="py-3" id="r5">和緩瑜珈</h2>
+              <p>適合初學者的入門課程，從簡單舒服且緩慢的練習中，獲得體位法的最大效益。 學員可以從頭認識瑜珈中基本常用的體位法名稱與其功效、動作流程順序，並使用瑜珈輔具來讓練習更容易上手，調息法讓身心更放鬆。</p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1 order-2"
+            style="background:url('assets/images/banner1.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6">
+            <div class="text-center px-2 py-5 p-lg-5">
+              <h2 class="py-3" id="r6">皮拉提斯</h2>
+              <p>皮拉提斯注重肌肉伸展和呼吸結合，主要訓練人體核心肌群，也就是丹田。皮拉提斯鍛鍊的是較深層肌肉，不是表面大肌群，所以不會壯大肌肉，反而讓線條變得更纖細修長。</p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6"
+            style="background:url('assets/images/pilates3.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6 order-lg-2 order-1">
+            <div class="text-center px-2 py-5 p-lg-5">
+              <h2 class="py-3" id="r7">入門飛輪</h2>
+              <p>這是為了沒有騎過飛輪經驗者準備的課程，教練們將介紹車子的基本設定和基本動作及手部握把姿勢來建立基礎的正確概念。</p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1 order-2"
+            style="background:url('assets/images/ride.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6">
+            <div class="text-center px-2 py-5 p-lg-5">
+              <h2 class="py-3" id="r8">燃脂耐力</h2>
+              <p>藉由飛輪訓練結合坐姿、站姿、速度快、速度慢、輕阻力以及重阻力來改變運動強度，搭配爬坡、平路、跳耀等動作，交互以站姿及坐姿切換彈性運用，有效訓練協助訓練者強化肌力及耐力，同時增進有氧能力，持續燃燒體脂肪。
+              </p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6"
+            style="background:url('assets/images/Spinning1.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6 order-lg-2 order-1">
+            <div class="text-center px-2 py-5 p-lg-5">
+              <h2 class="py-3" id="r9">肌力雕塑</h2>
+              <p>體態雕塑終結，肌力雕塑融入阻力訓練的元素與心肺運動獨特的魅力，當身體在中高強度區間運動時，能夠讓線條更緊實，甩開大腿內側的肥肉，讓好看的牛仔褲與Legging更服貼。心動嗎？趕快報名，飛輪課程的肌力雕塑。
+              </p>
+
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1 order-2"
+            style="background:url('assets/images/Spinning2.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+
+        <div class="row align-items-strech">
+          <div class="col-lg-6">
+            <div class="text-center px-2 py-5 p-lg-5">
+              <h2 class="py-3" id="r10">攀岩</h2>
+              <p>
+                這堂課程是針對初學者，或是想要嘗試戶外攀岩的人所設計，我們會帶學員到台灣最著名的龍洞攀岩場，在這堂課中，我們會從基本所需要的繩結、確保方法、基本裝備。當然也會讓學員在安全確保的情況下，挑戰自我，課程的目的除了讓學員了解戶外攀岩的樂趣外，也能挑戰自我的極限！
+              </p>
+              <a href="courseform.html" class="btn btn-dark">我要報名</a>
+            </div>
+          </div>
+          <div class="col-lg-6"
+            style="background:url('assets/images/boler1.jpg') center;background-size:cover;min-height:300px;">
+          </div>
+        </div>
+
+
+
+      </div>
+    </section>
+  </main>
+
+  <!-- footers 20 -->
+  <section class="w3l-footers-20">
+    <div class="footers20">
+      <div class="container">
+        <div class="footers20-content">
+          <div class="d-grid grid-col-4 grids-content">
+            <div class="column">
+              <h4>客服專區</h4>
+              <a class="foot" href="mailto:mail@example.com">
+                <p>聯絡我們</p>
+                <p class="contact-mail mt-1"><span class="lnr lnr-envelope"></span>service_business@tibame.com</p>
+              </a>
+              <a class="foot" href="tel:+1-2345-678-11">
+                <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
+                </p>
+              </a>
+              <a class="foot" href="contact.html">
+                <p> 常見問題</p>
+              </a>
+            </div>
+            <div class="column">
+              <h4>師資團隊</h4>
+              <a class="foot" href="coach.html">
+                <p class="coach-list mt-2"><span class="lnr lnr-coach-handset"></span> 教練介紹
+                </p>
+              </a>
+              <a class="foot" href="course.html">
+                <p class="classes-list mt-2"><span class="lnr lnr-classes-handset"></span> 團課介紹
+                </p>
+              </a>
+              <a class="foot" href="course.html">
+                <p class="classes-list mt-2"><span class="lnr lnr-classes-mounth"></span> 當月課表
+                </p>
+              </a>
+            </div>
+
+            <div class="column">
+              <h4>商城</h4>
+              <a class="foot" href="優惠活動列表">
+                <p>優惠活動</p>
+              </a>
+
+            </div>
+            <div class="column">
+              <h4>營業時間</h4>
+              <p>We are working on</p>
+              <p class="mt-1"><span class="lnr lnr-clock"></span> <strong>Mon - Fri</strong> : 7am to 9pm
+              </p>
+              <p class="mt-1"><span class="lnr lnr-clock"></span> <strong>Sat - Sun</strong> : 10 am to 8
+                pm
+              </p>
+              <p class="contact-map mt-2"><span class="lnr lnr-map-marker"></span>場館位置</p>
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2490359444073!2d121.22244777443302!3d24.957640341363774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1684388144187!5m2!1szh-TW!2stw"
+                width="280" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+          </div>
+          <div class="d-grid grid-col-3 grids-content1 bottom-border">
+            <div class="columns copyright-grid align-self">
+              <p class="copy-footer-29">© 2023 Workout | Designed by no.7 team</p>
+            </div>
+            <div class="columns text-lg-right social-grid">
+              <ul class="social">
+                <li><a href="#url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                <li><a href="#url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+                <li><a href="#url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 回到最頂部 -->
+    <button onclick="topFunction()" id="movetop" title="Go to top" class="bg-dark">
+      &#10548;
+    </button>
+    <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction()
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("movetop").style.display = "block";
+        } else {
+          document.getElementById("movetop").style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!-- /回到最頂部 -->
+  </section>
+
+  <!-- BootStrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+    crossorigin="anonymous"></script>
+
+  <!-- Jquery-->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+
+  <!-- libhtbox -->
+  <script src="assets/js/lightbox-plus-jquery.min.js"></script>
+  <script src="assets/js/owl.carousel.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <script>
+
+    // 導覽列
+    $(function () {
+      $('.navbar-toggler').click(function () {
+        $('body').toggleClass('noscroll');
+      })
+    });
+
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

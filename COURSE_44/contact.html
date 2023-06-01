@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Workout - Sports Category Responsive Website Template | Contact : W3layouts</title>
+
+  <!-- 字體樣式 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+  </style>
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css">
+
+  <!-- bootstrap5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    /* 連結底線 */
+    a.foot {
+      text-decoration: underline;
+      color: black;
+    }
+
+    /* 問題下拉選單 */
+    * {
+      box-sizing: border-box;
+    }
+
+    ul.list {
+      margin: 24px 0 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul.list>li {
+      margin-bottom: 30px;
+    }
+
+    ul.list>li:last-child {
+      margin-bottom: 0;
+    }
+
+    ul.list>li>a.link_title {
+      display: block;
+      width: 100%;
+      color: black;
+      box-shadow: 2px 2px 8px 0 rgba(56, 55, 53, 0.33);
+      border-radius: 26px;
+      padding: 8px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    ul.list>li>a.link_title::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    ul.list>li>a.link_title button.switch_btn {
+      display: inline-block;
+      background: none;
+      border: 0;
+      outline: none;
+      font-size: 16px;
+    }
+
+    ul.list>li>a.link_title button.switch_btn span.-minus {
+      display: none;
+    }
+
+    ul.list>li>div.inner_block {
+      font-size: 16px;
+      color: #4a4a4a;
+      margin-top: 8px;
+      padding: 0 25px;
+      line-height: 1.6;
+      display: none;
+    }
+
+    ul.list>li.-on>a.link_title button.switch_btn span.-plus {
+      display: none;
+    }
+
+    ul.list>li.-on>a.link_title button.switch_btn span.-minus {
+      display: inline-block
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+
+  <!--header-->
+  <header id="site-header" class="fixed-top">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg stroke">
+        <h1> <a class="navbar-brand" href="index.html">
+            <span class="lnr lnr-bicycle"></span> Give Me Gym</a></h1>
+        <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
+          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
+          <span class="navbar-toggler-icon fa icon-close fa-times"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">首頁<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item @@about__active">
+              <a class="nav-link" href="coach.html">私人教練</a>
+            </li>
+            <li class="nav-item @@classes__active">
+              <a class="nav-link" href="course.html">團課課程</a>
+            </li>
+            <li class="nav-item @@contact__active">
+              <a class="nav-link" href="contact.html">線上商城</a>
+            </li>
+            <li class="nav-item @@contact__active">
+              <a class="nav-link" href="contact.html">常見問題</a>
+            </li>
+            <li class="nav-item @@contact__active">
+              <a class="nav-link" href="contact.html">會員中心</a>
+            </li>
+            <!--/search-right-->
+            <div class="search-right">
+              <a href="#search" title="search"><span class="fa fa-search" aria-hidden="true"></span></a>
+              <!-- search popup -->
+              <div id="search" class="pop-overlay">
+                <div class="popup">
+
+                  <form action="#" method="GET" class="search-box">
+                    <input type="search" placeholder="Enter Keyword" name="search" required="required" autofocus="">
+                    <button type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
+                  </form>
+
+                </div>
+                <a class="close" href="#close">×</a>
+              </div>
+              <!-- /search popup -->
+            </div>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!--/header-->
+
+
+  <section class="w3l-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-contact py-5">
+      <div class="container py-lg-5 py-md-3">
+        <h3 class="title-big text-center">常見問題</h3>
+        <p class="mt-3">請透過下方分類快速找尋您的疑問，若仍無法獲得解答，您可以直接與我們聯繫！</p>
+      </div>
+    </div>
+  </section>
+
+  <!--編輯區-->
+  <section class="py-5">
+    <div class="container py-lg-5 py-md-3">
+      <h2 class="text-center mb-4 py-5 fs-2" style="font-weight: bold;">您有這些煩惱嗎? </h2>
+      <div class="row row-cols-lg-4">
+        <!-- 廠館相關 -->
+        <div class="col">
+          <div class="card border-0 shadow" style="height: 80vh;">
+            <div class=" card-header border-0 text-center bg-dark text-white fs-4">
+              廠館相關問題
+            </div>
+            <div class="card-body text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="house-user" width="100px" class="mb-3">
+                <path fill="#080808"
+                  d="M21.7,10.3l-9-8c-0.4-0.3-0.9-0.3-1.3,0l-9,8c-0.4,0.4-0.5,1-0.1,1.4s1,0.5,1.4,0.1L4,11.4V21c0,0.6,0.4,1,1,1h14c0.6,0,1-0.4,1-1v-9.6l0.3,0.3c0.4,0.4,1,0.3,1.4-0.1C22.1,11.3,22.1,10.6,21.7,10.3z M12,11c1.5,0,2.7,1.2,2.7,2.7c0,1.5-1.2,2.7-2.7,2.7c-1.5,0-2.7-1.2-2.7-2.7S10.5,11,12,11z M7,20c0-0.1,0-0.1,0.1-0.2c2.2-2.7,6.2-3.2,8.9-1c0.4,0.3,0.7,0.6,1,1c0,0,0,0.1,0.1,0.2H7z">
+                </path>
+              </svg>
+              <ul class="list">
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    廠館營業時間?
+                  </a>
+                  <div class="inner_block text-start">
+                    週一至週六AM06:00-PM24:00；週日為AM08:00-PM24:00 (不分國定假日)
+                  </div>
+                </li>
+
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    廠館位置?
+                  </a>
+                  <div class="inner_block text-start">
+                    桃園市中壢區復興路46號9樓
+                  </div>
+                </li>
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    廠館內是否可以飲食
+                  </a>
+                  <div class="inner_block text-start">
+                    廠館運動區域內皆禁止飲食，感謝您的配合，也提醒您，切勿空腹運動，避免血糖過低，造成危險。
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- 會員相關 -->
+        <div class="col">
+          <div class="card border-0 shadow" style="height: 80vh;">
+            <div class="card-header border-0 text-center bg-dark text-white fs-4">
+              私人教練相關
+            </div>
+            <div class="card-body text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="user" width="100px" class="mb-3">
+                <path fill="#000" fill-rule="evenodd"
+                  d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Zm3-12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 7a7.489 7.489 0 0 1 6-3 7.489 7.489 0 0 1 6 3 7.489 7.489 0 0 1-6 3 7.489 7.489 0 0 1-6-3Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <ul class="list">
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    該如何取消教練課?
+                  </a>
+                  <div class="inner_block text-start">
+                    學員須於開課前12小時前至會員中心進行課程取消；
+                    如學員未能在此期限內取消，則視為違規；
+                    缺席/違規次數如達3次，健身房保留停權的權利。
+                  </div>
+                </li>
+
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    一對一教練請假處理辦法?
+                  </a>
+                  <div class="inner_block text-start">
+                    如教練因故無法進行一對一課程教學；
+                    將會以信件方式通知學員，而後教練將會另安排補課時間。
+                  </div>
+                </li>
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    當缺席/違規次數到達幾次將會被停權處置?
+                  </a>
+                  <div class="inner_block text-start">
+                    依據缺席/違規次數到達3次，學員將被暫停使用一對一教練服務；
+                    停權日後兩周方能重新預約一對一教練課程。
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- 課程相關 -->
+        <div class="col">
+          <div class="card border-0 shadow" style="height: 80vh;">
+            <div class="card-header border-0 text-center bg-dark text-white fs-4">
+              團體課程相關
+            </div>
+            <div class="card-body text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="100" viewBox="0 0 100 100" id="yoga" class="mb-3">
+                <path fill-rule="evenodd"
+                  d="M90.258 27.913c-.535-.787-1.089-1.602-1.762-2.334-1.517-1.656-3.027-3.317-4.538-4.979l-2.375-2.612c-.399-.438-.628-.878-.72-1.384-.14-.768-.346-1.634-1.049-2.182-.754-.586-1.065-1.409-.981-2.587.132-1.848.391-3.353 1.227-4.687l.09-.138c.206-.297.587-.852.19-1.465-.31-.482-.885-.601-1.519-.524-.076.009-.151.019-.225.023-.505.032-.916.26-1.297.471-1.233.685-2.071 1.692-2.489 2.995-.438 1.364-.963 2.396-1.65 3.245-.459.567-.912 1.244-.79 1.965.123.729.78 1.227 1.472 1.656.561.346.618.48.623.501 0 .024-.024.174-.511.671-.114.116-.23.234-.362.326l-.229.158c-1.92 1.333-3.905 2.711-6.043 3.733-.309.148-.625.286-.941.424-1.109.485-2.257.987-3.148 1.906-1.204 1.238-2.607 2.13-4.094 3.076l-.684.436c-1.396.898-2.811 1.486-4.319 1.795-1.505.309-2.715.861-3.697 1.688-1.037.875-2.175 1.669-3.275 2.438l-.896.628c-.141.1-.29.199-.434.261l.06-.207c.152-.533.283-.993.699-1.217a2 2 0 0 0 1.019-1.376 2.375 2.375 0 0 0-.454-1.925l-.116-.148c-.695-.893-1.114-1.432-1.875-1.432-.3 0-.628.087-1.099.29a5.109 5.109 0 0 0-.279.133c-.138.069-.309.155-.39.155-.029 0-.085-.065-.096-.079-.628-.757-1.504-1.094-2.356-1.345-1.915-.565-3.657-.23-4.971.964-.73.664-1.417 1.492-2.162 2.605-.298.443-.608 1.055-.365 1.851.16.521.353 1.037.546 1.554.374.998.727 1.939.855 2.942.056.434.479.507.889.578.069.011.133.021.102.002.379.206.534.503.748.915.139.268.297.572.54.868.318.387.741.596 1.225.607-1.07.302-2.061.701-2.953 1.091a5.166 5.166 0 0 1-1.964.438l-.898.023c-.581.017-1.163.034-1.744.034-1.194 0-2.107-.073-2.962-.237-1.261-.24-2.576-.194-4.139.153l-.348.078c-.6.134-1.199.269-1.803.376-2.092.374-4.279.48-6.573.347l-.171-.005c-.308 0-.592.044-.867.087l-.325.048c-.843.106-1.688.255-2.536.404-1.555.273-3.163.556-4.737.556-.15 0-.3-.002-.491-.01l-.117-.004c-.478 0-.708.325-.725.646-.02.354.194.758.545.891 1.415 1.115 3.104 1.167 4.739 1.218.491.015.98.03 1.458.075.729.07 1.384-.07 1.899-.426.655-.453 1.415-.585 2.437-.413 2.531.423 5.034.482 7.362.482.652 0 1.304-.005 1.957-.01l1.32-.011c.356-.004.714-.008 1.071-.008.89 0 1.567.027 2.263.092 1.919.18 3.904.365 5.868.365 1.806 0 3.413-.158 4.912-.482 1.812-.392 3.254.158 4.257 1.644 1.357 2.01 3.327 2.896 5.621 2.528 1.098-.177 2.2-.048 3.41.402.645.24 1.497.456 2.24.273.748-.186 1.564-.277 2.497-.277.905 0 1.837.085 2.738.166.907.082 1.845.167 2.779.17.37.001.59.101.683.624.237 1.322.431 2.514.404 3.725a36.61 36.61 0 0 0 .439 6.37c.474 3.039.623 5.371.482 7.562-.066 1.038.048 1.935.351 2.738.165.44.188.955.066 1.577-.492 2.547-.695 5.151-.89 7.671-.077.979-.152 1.957-.245 2.934-.059.623-.076 1.16-.093 1.653-.042 1.243-.073 2.141-.752 3.502-.423.847-.771 1.19-1.258 1.537-.448.249-.807.475-1.122.672-.608.382-1.012.636-1.672.779a42.65 42.65 0 0 1-2.355.844c-.763.239-1.308.744-1.424 1.319-.056.279-.056.827.573 1.357.237.199.62.28 1.324.28 1.245 0 3.264-.265 5.072-.523.424-.062.908.049 1.441.161.668.143 1.383.29 2.07.168 2.162-.375 2.162-1.868 2.162-2.76 0-.832-.24-1.634-.34-1.927.333-3.47 1.093-6.673 2.198-9.271 1.082-2.542 1.458-5.316 1.15-8.482-.133-1.356-.081-2.482.163-3.541.068-.3.104-.606.14-.914l.021-.178c.104-.865.181-1.731.257-2.599.129-1.463.263-2.975.533-4.441.662-3.596 1.012-6.366 1.133-8.98.055-1.156.188-2.335.318-3.477.049-.419.096-.839.14-1.258.076-.714.157-1.206.59-1.521 1.05-.763 2.023-1.628 2.965-2.466a68.256 68.256 0 0 1 1.605-1.397c3.744-3.125 6.791-5.866 9.487-9.088 1.296-1.548 1.389-2.948.27-4.593zM40.619 43.969c-1.428.309-2.964.459-4.698.459-1.917 0-3.877-.183-5.841-.367a24.074 24.074 0 0 0-2.29-.09c-.361 0-.722.004-1.082.008l-1.317.011c-.649.005-1.299.01-1.948.01-2.284 0-4.737-.057-7.196-.468-1.295-.215-2.297-.028-3.174.577-.32.22-.746.298-1.231.254-.5-.048-1.011-.064-1.524-.081-1.367-.042-2.668-.083-3.752-.73 1.584-.025 3.157-.302 4.68-.569.831-.146 1.66-.292 2.488-.397.119-.015.236-.033.354-.052.235-.037.469-.075.711-.075l.114.003c2.375.136 4.637.027 6.808-.36.618-.11 1.232-.248 1.846-.385l.346-.077c1.434-.32 2.6-.363 3.732-.147.919.176 1.891.254 3.15.254.59 0 1.182-.018 1.773-.034l.89-.023a6.172 6.172 0 0 0 2.346-.522c1.522-.665 3.344-1.361 5.352-1.49.269-.017.604-.038.899-.189a1.18 1.18 0 0 0 .247-.183c.721 1.254 1.431 3.808 1.743 5.02-.986-.507-2.135-.638-3.426-.357zm-1.186-5.076l.035-.018.322-.164c.371-.192.639-.331 1.062-.402.081-.013.161-.02.239-.02.339 0 .526.117.544.128.009.148-.021.164-.042.175-.107.055-.326.069-.546.083-.552.035-1.091.112-1.614.218zm6.887.311c-1.196 1.024-3.051.062-3.736-.358.042-.139.068-.297.056-.492-.046-.727-.919-1.208-1.953-1.038-.58.097-.958.293-1.359.501l-.304.154c-.5.246-.861.249-1.119-.064-.176-.214-.296-.446-.424-.692-.239-.46-.51-.982-1.161-1.336-.105-.057-.22-.077-.411-.109l-.106-.017c-.169-1.004-.523-1.948-.866-2.864-.064-.171-.118-.342-.18-.512.502-.617 1.489-1.61 2.734-1.683 1.809-.106 2.66 2.283 2.66 2.283s.006-1.863.644-1.964c.639-.101 1.133.106 1.521.745s.84 2.234 1.571 2.34c.331.048.653-.1.91-.274a.843.843 0 0 0 .143.334c.237.32.674.412 1.183.229l.023-.011c.432 1.087 1.355 3.815.174 4.828zm16.595 5a52.351 52.351 0 0 0-.146 4.573 84.68 84.68 0 0 1-1.083-.09c-.923-.083-1.878-.17-2.829-.17-1.015 0-1.911.101-2.74.306-.504.127-1.11-.04-1.647-.24-1.021-.379-1.984-.555-2.934-.538.058-.765.386-2.384 1.934-4.692a394.51 394.51 0 0 0 3.829-5.828c.961.936 1.957 1.901 3.188 2.623.683.4 1.313.595 1.931.595.106 0 .211-.016.314-.028.142.6.321 1.753.183 3.489zm10.965 7.461c-.12 2.567-.465 5.295-1.12 8.845-.277 1.514-.413 3.05-.544 4.535-.076.857-.151 1.713-.254 2.568l-.021.184c-.03.269-.06.539-.121.801-.268 1.169-.327 2.396-.185 3.865.292 2.994-.059 5.608-1.073 7.991-1.157 2.72-1.948 6.068-2.285 9.681l-.011.116.042.109c.003.008.315.844.315 1.686 0 .982-.062 1.548-1.329 1.77-.526.091-1.11-.039-1.689-.161-.597-.127-1.229-.255-1.791-.174-1.774.253-3.748.513-4.931.513-.475 0-.649-.045-.673-.045-.002 0-.003.001-.002.002-.101-.085-.26-.245-.23-.386.033-.169.304-.42.737-.556a33.967 33.967 0 0 0 2.34-.845c.756-.156 1.271-.479 1.922-.889.302-.189.646-.405 1.12-.672.641-.45 1.111-.911 1.625-1.938.777-1.559.812-2.6.856-3.918.016-.476.034-.992.091-1.593.092-.982.169-1.967.245-2.95.193-2.491.393-5.067.875-7.558.156-.81.12-1.503-.113-2.122-.254-.677-.346-1.414-.287-2.319.145-2.269-.007-4.668-.493-7.783a35.377 35.377 0 0 1-.427-6.193 13.497 13.497 0 0 0-.104-1.897c.543-.457 1.673-1.158 3.89-1.745 2.119-.561 3.219-.755 3.771-.82-.064.63-.117 1.264-.146 1.898zm2.079-15.925c-.865.684-1.62 1.015-2.438 1.07l-.686-.108a41.82 41.82 0 0 1-1.633-.274c-1.915-.375-3.678.044-5.24 1.24-.426.327-.866.636-1.307.945a66.86 66.86 0 0 0-.862.613c-.926.672-1.726.683-2.798.055-1.14-.669-2.057-1.562-3.029-2.508-.496-.483-1.009-.983-1.551-1.446-.147-.125-.271-.337-.401-.561l-.102-.17c-.075-.125-.084-.2-.077-.222.006-.022.048-.076.168-.137 1.874-.959 3.448-2.319 4.971-3.633.752-.65 1.53-1.322 2.327-1.929 1.529-1.164 2.814-2.12 4.262-2.938 1.306-.738 2.449-1.698 3.555-2.625.636-.534 1.294-1.086 1.966-1.581.48-.352.957-.708 1.412-1.087.669-.556 1.521-.577 2.458-.6l.014-.504v.503c.218 0 .34.147.571.563.224.4.452.797.683 1.194.537.929 1.094 1.889 1.54 2.866.903 1.973 2.243 3.568 4.099 4.876.274.193.409.306.473.372a3.524 3.524 0 0 1-.399.382c-.526.453-1.044.884-1.598 1.173-2.159 1.127-4.064 2.637-5.906 4.097l-.472.374zm13.258-3.881c-2.612 3.123-6.356 6.363-9.991 9.401-.349-.358-.835-1.062-1.496-2.618-.466-1.099-.476-2.136-.686-2.556 1.682-1.33 3.836-2.922 5.759-3.925.648-.339 1.215-.809 1.787-1.303.458-.394.806-.732.783-1.195-.022-.467-.419-.781-.933-1.144-1.706-1.203-2.938-2.665-3.763-4.472-.468-1.021-1.036-2.002-1.586-2.952a85.568 85.568 0 0 1-.674-1.18c-.225-.404-.603-1.08-1.45-1.08l-.076.001c-.984.024-2.101.052-3.04.832-.439.367-.9.71-1.362 1.05-.699.514-1.369 1.077-2.018 1.621-1.071.899-2.179 1.829-3.404 2.521-1.501.849-2.814 1.824-4.375 3.012-.821.625-1.611 1.308-2.376 1.968-1.478 1.276-3.005 2.595-4.771 3.5-.449.229-.617.54-.68.759a1.025 1.025 0 0 0-.034.194c-.522.281-1.531.655-3.194.655-1.931 0-3.564-.838-4.32-1.299l.418-.294c1.119-.781 2.276-1.59 3.348-2.494.851-.717 1.914-1.198 3.251-1.473 1.634-.334 3.158-.967 4.661-1.935l.68-.433c1.47-.935 2.989-1.9 4.274-3.224.755-.778 1.764-1.218 2.831-1.685.327-.143.654-.286.973-.438 2.211-1.057 4.229-2.459 6.183-3.815l.229-.159a3.59 3.59 0 0 0 .507-.448c.533-.545.853-.986.791-1.496-.068-.56-.6-.932-1.092-1.237-.646-.4-.967-.708-1.012-.968-.041-.249.148-.63.581-1.164.769-.95 1.35-2.084 1.827-3.571.342-1.065 1.002-1.858 2.038-2.432.296-.164.576-.319.855-.336.091-.006.186-.018.279-.029.106-.013.215-.027.319-.027.172 0 .199.042.245.116.002.06-.119.235-.184.33l-.116.173c-.946 1.511-1.234 3.151-1.378 5.15-.106 1.523.34 2.652 1.367 3.453.423.33.566.955.678 1.568.125.689.44 1.305.966 1.882l2.374 2.611c1.512 1.663 3.023 3.326 4.543 4.983.623.679 1.154 1.462 1.707 2.274.832 1.22.767 2.122-.243 3.328z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <ul class="list">
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    團課教練請假處理辦法?
+                  </a>
+                  <div class="inner_block text-start">
+                    如教練因故無法進行團體課程教學；將會以信件方式通知學員，而後教練將會另安排補課時間。
+                  </div>
+                </li>
+
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    該如何取消團體課程?
+                  </a>
+                  <div class="inner_block text-start">
+                    若您想取消課程，請在課程報名截止日前提出取消申請，我司將全額退款給您；然而，若您在報名截止日後取消課程，我司將不予退款。
+                  </div>
+                </li>
+                <li>
+                  <a class="link_title" href="#">
+                    <button type="button" class="switch_btn">
+                      <span class="-plus">+</span><span class="-minus">-</span>
+                    </button>
+                    團課人數未達下限?
+                  </a>
+                  <div class="inner_block text-start">
+                    如課程的報名人數未達到下限，我司將全額退款給已報名課程的學員。
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- 商城相關 -->
+        <div class="col">
+          <div class="card border-0 shadow" style="height: 80vh;">
+            <div class="card-header border-0 text-center bg-dark text-white fs-4">
+              商城問題
+            </div>
+            <div class="card-body text-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="cart" width="100" class="mb-3">
+                <path
+                  d="M21.5,15a3,3,0,0,0-1.9-2.78l1.87-7a1,1,0,0,0-.18-.87A1,1,0,0,0,20.5,4H6.8L6.47,2.74A1,1,0,0,0,5.5,2h-2V4H4.73l2.48,9.26a1,1,0,0,0,1,.74H18.5a1,1,0,0,1,0,2H5.5a1,1,0,0,0,0,2H6.68a3,3,0,1,0,5.64,0h2.36a3,3,0,1,0,5.82,1,2.94,2.94,0,0,0-.4-1.47A3,3,0,0,0,21.5,15Zm-3.91-3H9L7.34,6H19.2ZM9.5,20a1,1,0,1,1,1-1A1,1,0,0,1,9.5,20Zm8,0a1,1,0,1,1,1-1A1,1,0,0,1,17.5,20Z">
+                </path>
+              </svg>
+              <li>
+                <ul class="list">
+                  <li>
+                    <a class="link_title" href="#">
+                      <button type="button" class="switch_btn">
+                        <span class="-plus">+</span><span class="-minus">-</span>
+                      </button>
+                      團課人數未達下限?
+                    </a>
+                    <div class="inner_block text-start">
+                      如課程的報名人數未達到下限，我司將全額退款給已報名課程的學員。
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--/編輯區-->
+
+  <!-- footers 20 -->
+  <section class="w3l-footers-20">
+    <div class="footers20">
+      <div class="container">
+        <div class="footers20-content">
+          <div class="d-grid grid-col-4 grids-content">
+            <div class="column">
+              <h4>客服專區</h4>
+              <a class="foot" href="mailto:mail@example.com">
+                <p>聯絡我們</p>
+                <p class="contact-mail mt-1"><span class="lnr lnr-envelope"></span>service_business@tibame.com</p>
+              </a>
+              <a class="foot" href="tel:+1-2345-678-11">
+                <p class="contact-phone mt-2"><span class="lnr lnr-phone-handset"></span> +1-2345-678-11
+                </p>
+              </a>
+              <a class="foot" href="contact.html">
+                <p> 常見問題</p>
+              </a>
+            </div>
+            <div class="column">
+              <h4>師資團隊</h4>
+              <a class="foot" href="coach.html">
+                <p class="coach-list mt-2"><span class="lnr lnr-coach-handset"></span> 教練介紹
+                </p>
+              </a>
+              <a class="foot" href="course.html">
+                <p class="classes-list mt-2"><span class="lnr lnr-classes-handset"></span> 團課介紹
+                </p>
+              </a>
+              <a class="foot" href="course.html">
+                <p class="classes-list mt-2"><span class="lnr lnr-classes-mounth"></span> 當月課表
+                </p>
+              </a>
+            </div>
+
+            <div class="column">
+              <h4>商城</h4>
+              <a class="foot" href="優惠活動列表">
+                <p>優惠活動</p>
+              </a>
+
+            </div>
+            <div class="column">
+              <h4>營業時間</h4>
+              <p>We are working on</p>
+              <p class="mt-1"><span class="lnr lnr-clock"></span> <strong>Mon - Fri</strong> : 7am to 9pm
+              </p>
+              <p class="mt-1"><span class="lnr lnr-clock"></span> <strong>Sat - Sun</strong> : 10 am to 8
+                pm
+              </p>
+              <p class="contact-map mt-2"><span class="lnr lnr-map-marker"></span>場館位置</p>
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2490359444073!2d121.22244777443302!3d24.957640341363774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1684388144187!5m2!1szh-TW!2stw"
+                width="280" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+          </div>
+          <div class="d-grid grid-col-3 grids-content1 bottom-border">
+            <div class="columns copyright-grid align-self">
+              <p class="copy-footer-29">© 2023 Workout | Designed by no.7 team</p>
+            </div>
+            <div class="columns text-lg-right social-grid">
+              <ul class="social">
+                <li><a href="#url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                <li><a href="#url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+                <li><a href="#url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 回到最頂部 -->
+    <button onclick="topFunction()" id="movetop" title="Go to top" class="bg-dark">
+      &#10548;
+    </button>
+    <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction()
+      };
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("movetop").style.display = "block";
+        } else {
+          document.getElementById("movetop").style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+    <!-- /回到最頂部 -->
+  </section>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+    crossorigin="anonymous"></script>
+
+  <!-- Jquery-->
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+
+  <!-- libhtbox -->
+  <script src="assets/js/lightbox-plus-jquery.min.js"></script>
+
+  <script src="assets/js/owl.carousel.js"></script>
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+    // 導覽列
+    $(function () {
+      $('.navbar-toggler').click(function () {
+        $('body').toggleClass('noscroll');
+      })
+    });
+
+    $(window).on("scroll", function () {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 80) {
+        $("#site-header").addClass("nav-fixed");
+      } else {
+        $("#site-header").removeClass("nav-fixed");
+      }
+    });
+
+    $(".navbar-toggler").on("click", function () {
+      $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+      if ($(window).width() > 991) {
+        $("header").removeClass("active");
+      }
+      $(window).on("resize", function () {
+        if ($(window).width() > 991) {
+          $("header").removeClass("active");
+        }
+      });
+    });
+
+
+    // 問題彈跳窗
+    $("a.link_title").on("click", function (e) {
+      e.preventDefault();
+      $(this).closest("li").toggleClass("-on");
+      $(this).closest("li").find("div.inner_block").slideToggle();
+    })
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>
