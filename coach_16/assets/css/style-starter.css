@@ -89,20 +89,32 @@ hr {
 }
 
 /* 教練側邊欄位 */
-aside,
-article {
-  float: left;
-  border: 1px solid #000;
-  height: 200px;
-  padding: 10px;
+
+
+h3.agileits-sear-head {
+  color: #FF5722;
+  margin-bottom: 20px;
+  font-size: 21px;
 }
 
-aside {
-  background-color: #F9F9F9;
-  padding: 25px 15px;
-
+h3.agileits-sear-head {
+  margin-bottom: 16px;
+  font-size: 18px;
 }
 
+h3.agileinfo_sign {
+  font-size: 33px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #FF5722;
+}
+
+h3.agileinfo_sign span {
+  font-weight: 300;
+}
 
 h1,
 h2,
@@ -355,6 +367,10 @@ legend {
   legend {
     font-size: calc(1.275rem + 0.3vw);
   }
+}
+
+.side-bar {
+  padding: 10px 30px 30px;
 }
 
 progress {
@@ -733,6 +749,115 @@ pre code {
   .container-md,
   .container-lg,
   .container-xl {
+    max-width: 1140px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  margin-left: 630px;
+}
+
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.no-gutters>.col,
+.no-gutters>[class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* 教練表 */
+.container2 {
+  width: 75%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 35px;
+  margin-left: 100px;
+}
+
+@media (min-width: 576px) {
+  .container2 {
+    max-width: 420px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container2 {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container2 {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container2 {
+    max-width: 1000px;
+  }
+}
+
+.container2-fluid,
+.container2-sm,
+.container2-md,
+.container2-lg,
+.container2-xl {
+  width: 80%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+
+  .container2,
+  .container2-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .container2,
+  .container2-sm,
+  .container2-md {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .container2,
+  .container2-sm,
+  .container2-md,
+  .container2-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .container2,
+  .container2-sm,
+  .container2-md,
+  .container2-lg,
+  .container2-xl {
     max-width: 1140px;
   }
 }
@@ -1311,8 +1436,8 @@ pre code {
   }
 
   .col-md-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 20%;
+    max-width: 22%;
   }
 
   .col-md-4 {
@@ -11088,7 +11213,6 @@ button,
 }
 
 button,
-input,
 select,
 label,
 li,
@@ -17633,6 +17757,7 @@ h2.pos {
   line-height: 50px;
   font-weight: 600;
 }
+
 
 .w3l-team h3.name-pos {
   margin-top: 15px;
