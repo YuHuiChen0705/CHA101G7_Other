@@ -17,9 +17,9 @@
 
 
         else {
-          // 表单验证通过
-          // 在此处设计弹出窗口
-          event.preventDefault(); // 阻止表单提交
+          // 表單驗證通過
+          // 阻止表單提交
+          event.preventDefault(); 
 
           Swal.fire({
             title: 'Success!',
@@ -28,7 +28,7 @@
             confirmButtonText: 'OK'
           })
             .then(function () {
-              // 按下确认按钮后重定向到首页
+              // 按下確認按鈕後回到首頁
               window.location.href = 'index.html'; 
             });
 
