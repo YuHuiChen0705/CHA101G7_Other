@@ -306,9 +306,7 @@ h3.agileinfo_sign span {
     background: none;
 }
 
-.navbar-nav>li {
-    margin: 0 9px;
-}
+
 
 .navbar-nav>li>a {
     padding: 15px 16px;
@@ -1008,7 +1006,7 @@ input#amount1 {
 
 .side-bar {
     background-color: #F9F9F9;
-    padding-left: 50px;
+    padding-top: 30px;
 }
 
 /*-- //Slider range --*/
