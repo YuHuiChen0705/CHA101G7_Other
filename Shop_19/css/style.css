@@ -601,7 +601,7 @@ button.w3view-cart {
 .snipcart-details input.button {
     font-size: 13px;
     color: #fff;
-    background: #1accfd;
+    background: #FF0000;
     text-decoration: none;
     position: relative;
     border: none;
@@ -742,7 +742,7 @@ button.w3view-cart {
 }
 
 .product-new-top {
-    background: #fc636b;
+    background: #FFC107;
     color: #fff;
     right: 0;
     position: absolute;
@@ -6191,6 +6191,8 @@ select.form-control.option-w3ls {
     margin: 0;
     display: flex;
     align-items: center;
+
+    justify-content: flex-end;
 }
 
 .prev-button,
@@ -6236,14 +6238,55 @@ select.form-control.option-w3ls {
     width: 60px;
 }
 
+.btn-container {
+    display: inline-flex;
+}
+
 .add-to-cart {
     display: block;
-    margin-top: 10px;
+    margin: 10px 20px 10px 0;
     padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
+    background-color: #ff0000;
     cursor: pointer;
+
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding: 13px;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+    text-align: center;
+
+    width: 120px;
+}
+
+.add-to-checkout {
+    display: block;
+    margin: 10px 20px 10px 0;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    cursor: pointer;
+
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding: 13px;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+    text-align: center;
+
+    width: 120px;
+
 }
 
 .image-container img {
@@ -6303,15 +6346,64 @@ img.shop {
 #category-filter {
     margin-top: 20px;
     margin-bottom: 40px;
+
+    font-size: 13px;
+    color: #fff;
+    background: #ff4040;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    width: 80%;
+    text-transform: uppercase;
+    padding: 13px;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+    text-align: center;
 }
 
 #sort-asc {
     margin-top: 20px;
     margin-bottom: 5px;
+
+    font-size: 13px;
+    color: #fff;
+    background: #ff4040;
+    text-decoration: none;
+    position: relative;
+    border: none;
+    border-radius: 4px;
+    width: 80%;
+    text-transform: uppercase;
+    padding: 13px;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
+
 }
 
 #sort-desc {
     margin-top: 20px;
+    margin-bottom: 5px;
+
+
+    font-size: 13px;
+    color: #fff;
+    background: #ff4040;
+    text-decoration: none;
+    position: relative;
+    border: none;
+    border-radius: 4px;
+    width: 80%;
+    text-transform: uppercase;
+    padding: 13px;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-align: center;
+
 }
 
 .cart-container {
@@ -6352,7 +6444,19 @@ img.shopCart {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
-    background-color: #ff9800;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.remove-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff0000;
     color: white;
     border: none;
     border-radius: 4px;
@@ -6361,7 +6465,7 @@ img.shopCart {
 }
 
 .checkout-button:hover {
-    background-color: #e64a19;
+    background-color: #ff6738;
 }
 
 #pd-quantity {
@@ -6398,7 +6502,7 @@ img.shopCart {
 }
 
 .checkout-form input[type="submit"] {
-    background-color: #4caf50;
+    background-color: #ff0000;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -6407,10 +6511,12 @@ img.shopCart {
 
     align-self: flex-end;
     margin-top: 10px;
+
+    font-weight: 600;
 }
 
 .checkout-form input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #da5151;
 }
 
 .payInfo .payInfo-title {
@@ -6446,14 +6552,38 @@ img.shopCart {
 .payInfo button {
     margin: 10px 0 20px 20px;
     /* 調整按鈕和標題之間的間距，可根據需要自行調整 */
+
+    background-color: #ff0000;
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    padding: 13px;
+    outline: none;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+    height: 45px;
+
 }
 
 .payInfo-inputs {
     margin-top: 10px;
 }
 
+.body-Content {
+    display: flex;
+}
+
 section.shop-order {
     margin: 40px 60px 40px 60px;
+}
+
+.shop-order {
+    flex: 1;
+    position: relative;
 }
 
 table.shop-order {

@@ -88,6 +88,34 @@ hr {
   overflow: visible;
 }
 
+/* 教練側邊欄位 */
+
+
+h3.agileits-sear-head {
+  color: #FF5722;
+  margin-bottom: 20px;
+  font-size: 21px;
+}
+
+h3.agileits-sear-head {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+h3.agileinfo_sign {
+  font-size: 33px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #FF5722;
+}
+
+h3.agileinfo_sign span {
+  font-weight: 300;
+}
+
 h1,
 h2,
 h3,
@@ -173,7 +201,7 @@ sup {
 }
 
 a {
-  color: #ff0000;
+  color: #483e3e;
   text-decoration: none;
   background-color: transparent;
 }
@@ -339,6 +367,13 @@ legend {
   legend {
     font-size: calc(1.275rem + 0.3vw);
   }
+}
+
+.side-bar {
+  width: 180pt;
+  box-shadow: 0px 0px 15px 0px #D6D6D6;
+  padding: 20px 50px 30px;
+  margin-bottom: .5rem;
 }
 
 progress {
@@ -724,9 +759,126 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: 10px;
+  margin-left: 15px;
 }
+
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  margin-left: 630px;
+}
+
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.no-gutters>.col,
+.no-gutters>[class*="col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* 教練表 */
+.container2 {
+  width: 75%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 35px;
+  margin-left: 100px;
+}
+
+@media (min-width: 576px) {
+  .container2 {
+    max-width: 420px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container2 {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container2 {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container2 {
+    max-width: 1000px;
+  }
+}
+
+.container2-fluid,
+.container2-sm,
+.container2-md,
+.container2-lg,
+.container2-xl {
+  width: 80%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+
+  .container2,
+  .container2-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .container2,
+  .container2-sm,
+  .container2-md {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .container2,
+  .container2-sm,
+  .container2-md,
+  .container2-lg {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .container2,
+  .container2-sm,
+  .container2-md,
+  .container2-lg,
+  .container2-xl {
+    max-width: 1140px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 10px;
+  margin-left: 630px;
+}
+
 
 .no-gutters {
   margin-right: 0;
@@ -1287,8 +1439,8 @@ pre code {
   }
 
   .col-md-3 {
-    flex: 0 0 25%;
-    max-width: 25%;
+    flex: 0 0 20%;
+    max-width: 22%;
   }
 
   .col-md-4 {
@@ -3378,6 +3530,17 @@ fieldset:disabled a.btn {
 .show>.btn-outline-dark.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
 }
+
+.btn-title {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.btn-:hover {
+  color: #b30000;
+  text-decoration: underline;
+}
+
 
 .btn-link {
   font-weight: 400;
@@ -11053,7 +11216,6 @@ button,
 }
 
 button,
-input,
 select,
 label,
 li,
@@ -11227,14 +11389,76 @@ a.link-style:hover:before {
   height: 3px;
   background: var(--primary-color);
   bottom: 0;
-  left: 0;
+  left: -25px;
   border-radius: var(--border-radius);
 }
+
+.title-big-center {
+  font-size: 45px;
+  line-height: 50px;
+  font-weight: 600;
+  max-width: 570px;
+  margin: auto;
+  position: relative;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.title-big-center:after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 3px;
+  background: var(--primary-color);
+  bottom: 0;
+  left: -1px;
+  border-radius: var(--border-radius);
+}
+
 
 .title-big-center:after {
   right: 0;
   margin: auto;
 }
+
+.title-big-right:after {
+  right: 0;
+
+}
+
+/* 靠右 */
+.title-mid {
+  font-size: 45px;
+  line-height: 50px;
+  font-weight: 600;
+  max-width: 570px;
+  margin: auto;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.title-mid:after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-color);
+  bottom: 0;
+  right: 0px;
+  border-radius: var(--border-radius);
+}
+
+
+.title-mid-center:after {
+  right: 0;
+  margin: auto;
+}
+
+.title-mid-right:after {
+  right: 0;
+
+}
+
 
 .title-small {
   font-size: 14px;
@@ -15903,6 +16127,7 @@ nav ul li a:hover {
   transition: all linear .35s;
 }
 
+
 .w3l-bottom-grids-6 .grids-feature span {
   display: inline-block;
   color: var(--primary-color);
@@ -17332,8 +17557,8 @@ h2.pos {
   }
 }
 
-/*-- //about block 2 --*/
-/*-- about block 3 --*/
+/*-- 最新消息--*/
+
 .middle {
   background: url(../images/banner1.jpg) no-repeat top;
   background-size: cover;
@@ -17344,6 +17569,8 @@ h2.pos {
   position: relative;
   z-index: 1;
 }
+
+
 
 .middle:before {
   content: "";
@@ -17379,6 +17606,7 @@ h2.pos {
   color: #fff;
   max-width: 650px;
   margin: auto;
+  text-align: left;
 }
 
 @media only screen and (max-width: 736px) {
@@ -17388,14 +17616,151 @@ h2.pos {
   }
 }
 
-/*-- //about block 3 --*/
-/*-- about block 4 --*/
+.welcome-right h3 {
+  font-size: 40px;
+  line-height: 55px;
+  font-weight: 600;
+  color: #fff;
+  max-width: 650px;
+  margin: auto;
+  text-align: right;
+}
+
+@media only screen and (max-width: 736px) {
+  .welcome-right h3 {
+    font-size: 30px;
+    line-height: 40px;
+
+  }
+}
+
+/*-- //首頁教練  --*/
+
+
+.coachmiddle {
+  background: url(../images/proclass.png) no-repeat top;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.coachmiddle:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.coachmiddle p.text-italic {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.coachmiddle p.text-italic a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.coachmiddle p.text-italic a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*-- //首頁團課 3 --*/
+
+.groupmiddle {
+  background: url(../images/groupclass.png) no-repeat top;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.groupmiddle:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.groupmiddle p.text-italic {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.groupmiddle p.text-italic a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.groupmiddle p.text-italic a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*-- 首頁商城--*/
+.mallmiddle {
+  background: url(../images/mall.jpg) no-repeat top;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.mallmiddle:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  left: 0;
+  z-index: -1;
+}
+
+.mallmiddle p.text-italic {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.mallmiddle p.text-italic a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.mallmiddle p.text-italic a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+
 .w3l-team .teams1-content h2 {
   color: var(--title-color);
   font-size: 40px;
   line-height: 50px;
   font-weight: 600;
 }
+
 
 .w3l-team h3.name-pos {
   margin-top: 15px;

@@ -117,16 +117,16 @@
                 <tr>
                     <td><img src="./images/pd025.jpg" alt="商品圖片" class="shopCart"></td>
                     <td>商品名稱 1</td>
-                    <td><input type="number" min="1" value="1" id="pd-quantity"></td>
+                    <td><input type="number" min="1" max="5" value="1" id="pd-quantity"></td>
                     <td>$100</td>
-                    <td class="item-total">$200</td>
+                    <td class="item-total">$100</td>
                     <td><button class="remove-button">移除</button></td>
                 </tr>
                 <!-- 第二項商品 -->
                 <tr>
                     <td><img src="./images/pd028.jpg" alt="商品圖片" class="shopCart"></td>
                     <td>商品名稱 2</td>
-                    <td><input type="number" min="1" value="1" id="pd-quantity"></td>
+                    <td><input type="number" min="1" max="5" value="1" id="pd-quantity"></td>
                     <td>$150</td>
                     <td class="item-total">$150</td>
                     <td><button class="remove-button">移除</button></td>
@@ -249,7 +249,6 @@
 
     <script>
         // 取得元素
-        const items = document.querySelectorAll('.cart-container tbody tr');
         const removeButtons = document.querySelectorAll('.remove-button');
         const quantityInputs = document.querySelectorAll('.cart-container tbody tr input[type="number"]');
         const itemTotalElements = document.querySelectorAll('.item-total');
@@ -263,25 +262,15 @@
             updateCartTotal();
         }
 
-        // 更新商品總價
-        function updateItemTotal(event) {
-            const currentItem = event.target.closest('tr');
-            const quantityInput = currentItem.querySelector('input[type="number"]');
-            const itemTotalElement = currentItem.querySelector('.item-total');
-            const itemPrice = currentItem.querySelector('td:nth-child(4)').textContent.replace('$', '');
-            const quantity = parseInt(quantityInput.value);
-            const itemTotal = quantity * parseInt(itemPrice);
-            itemTotalElement.textContent = '$' + itemTotal;
-            updateCartTotal();
-        }
-
         // 更新購物車總價
         function updateCartTotal() {
             let cartTotal = 0;
-            itemTotalElements.forEach((itemTotalElement) => {
+            document.querySelectorAll('.item-total').forEach((itemTotalElement) => {
                 const itemTotal = parseInt(itemTotalElement.textContent.replace('$', ''));
                 cartTotal += itemTotal;
+                console.log(itemTotal + "單項總價")
             });
+            console.log(cartTotal + "車子總價");
             cartTotalElement.textContent = '$' + cartTotal;
         }
 
@@ -292,8 +281,21 @@
 
         // 監聽數量輸入框變更事件
         quantityInputs.forEach((quantityInput) => {
-            quantityInput.addEventListener('input', updateItemTotal);
+            quantityInput.addEventListener('input', () => {
+                updateItemTotal(quantityInput);
+            });
         });
+
+        // 更新單項商品總價
+        function updateItemTotal(quantityInput) {
+            const currentItem = quantityInput.closest('tr');
+            const itemTotalElement = currentItem.querySelector('.item-total');
+            const itemPrice = currentItem.querySelector('td:nth-child(4)').textContent.replace('$', '');
+            const quantity = parseInt(quantityInput.value);
+            const itemTotal = quantity * parseInt(itemPrice);
+            itemTotalElement.textContent = '$' + itemTotal;
+            updateCartTotal();
+        }
 
         // 初始化購物車總價
         updateCartTotal();
@@ -303,12 +305,12 @@
             // 執行下單操作
             // ...
             if (confirm("確認下單?")) {
-                alert("跳至結帳頁")
+                alert("跳至結帳頁");
             }
-
         });
-
     </script>
+
+
 
     <script src="assets/js/jquery-3.3.1.min.js"></script>
 
