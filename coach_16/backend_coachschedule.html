@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="assets/css/style-starter.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- bootstrap5 CSS -->
+    <script src="assets\css\bootstrap.css"></script>
+    <script src="assets\css\style-starter.css"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>
+    <title>員工後台</title>
+    <style>
+        body {
+            background-color: #fef8f0f9;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            right:5rem;
+        }
+
+        .header2 {
+            width: 1050px;
+            position: relative;
+            z-index: 100;
+        }   
+        .header2 h1{
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #151413f9;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff0000;
+            padding: 0px 10px;
+
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .user .name {
+            margin-right: 10px;
+            color: #5f5d5d;
+        }
+
+        .sidebar {
+            width: 110px;
+            background-color: #5f5d5d;
+            opacity: 0.8;
+            padding: 10px 15px;
+            margin: 0px 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .sidebar li a {
+            font-size: 16px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar li a:hover {
+            color: #aaa;
+        }
+
+        .submenu {
+            margin-left: 10px;
+        }
+
+        .submenu ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            background-color: #fff;
+            color: #000;
+            display: none;
+        }
+
+        .submenu li {
+            margin-bottom: 5px;
+        }
+
+        .btn-style {
+            padding: 10px 32px;
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 600;
+            transition: 0.3s ease-in;
+            border-radius: 6px;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+
+        .m-4 {
+            margin: 1.5rem !important;
+        }
+
+
+        #calendar {
+            width: 100%;
+        }
+
+        #calendar a {
+            color: #8e352e;
+            text-decoration: none;
+        }
+
+        #calendar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        #calendar li {
+            display: block;
+            float: left;
+            width: 14.342%;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            margin-right: -1px;
+            margin-bottom: -1px;
+        }
+
+        #calendar ul.weekdays {
+            height: 40px;
+            background: #8e352e;
+        }
+
+        #calendar ul.weekdays li {
+            text-align: center;
+            text-transform: uppercase;
+            line-height: 20px;
+            border: none !important;
+            padding: 10px 6px;
+            color: #fff;
+            font-size: 13px;
+        }
+
+        #calendar .days li {
+            height: 150px;
+        }
+
+        #calendar .days li:hover {
+            background: #d3d3d3;
+        }
+
+        #calendar .date {
+            text-align: center;
+            margin-bottom: 5px;
+            padding: 4px;
+            background: #333;
+            color: #fff;
+            width: 20px;
+            border-radius: 50%;
+            float: right;
+        }
+
+        #calendar .event {
+            clear: both;
+            display: block;
+            font-size: 13px;
+            border-radius: 4px;
+            padding: 5px;
+            margin-top: 40px;
+            margin-bottom: 5px;
+            line-height: 14px;
+            background: #e4f2f2;
+            border: 1px solid #b5dbdc;
+            color: #009aaf;
+            text-decoration: none;
+        }
+
+        #calendar .event-desc {
+            color: #666;
+            margin: 3px 0 7px 0;
+            text-decoration: none;
+        }
+
+        #calendar .other-month {
+            background: #f5f5f5;
+            color: #666;
+        }
+
+        div .date {
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+
+        /* ============================
+				Mobile Responsiveness
+   ============================*/
+
+
+        @media(max-width: 768px) {
+
+            #calendar .weekdays,
+            #calendar .other-month {
+                display: none;
+            }
+
+            #calendar li {
+                height: auto !important;
+                border: 1px solid #ededed;
+                width: 100%;
+                padding: 10px;
+                margin-bottom: -1px;
+            }
+
+            #calendar .date {
+                float: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Give Me Gym</div>
+        <div class="user">
+            <div class="name">User Name </div>
+            <a class="btn btn-style btn-primary">登出</a>
+        </div>
+    </header>
+    <div class="body" style="display: flex;">
+        <div class="sidebar">
+            <h2>首頁</h2>
+
+            <h2>員工管理</h2>
+            <ul>
+                <li><a href="#">新增員工</a></li>
+                <li><a href="#">查詢員工</a></li>
+                <li><a href="#">員工權限</a></li>
+            </ul>
+
+            <h2>會員管理</h2>
+            <ul>
+                <li><a href="#">新增會員</a></li>
+                <li><a href="#">查詢會員</a></li>
+                <li><a href="#">會員權限</a></li>
+            </ul>
+
+            <h2>商城管理</h2>
+            <ul>
+                <li><a href="#">商品管理</a></li>
+                <li><a href="#">訂單管理</a></li>
+            </ul>
+
+            <h2>教練管理</h2>
+            <ul>
+                <li><a href="backend_coachmager.html">教練管理</a></li>
+                <li><a href="backend_coachschedule.html">教練排班</a></li>
+            </ul>
+
+            <h2>團課管理</h2>
+            <ul>
+                <li><a href="#">新增團課</a></li>
+                <li><a href="#">查詢團課</a></li>
+                <li><a href="#">團課排班</a></li>
+            </ul>
+
+            <h2>客服管理</h2>
+            <ul>
+                <li><a href="#">客戶查詢</a></li>
+                <li><a href="#">訂單查詢</a></li>
+                <li><a href="#">FAQ管理</a></li>
+            </ul>
+        </div>
+        <div class="header2 ">
+            <div class="d-flex justify-content-between align-items-center ">
+                <h1>June 2023</h1>
+                <select>
+                    <option>請選擇教練</option>
+                    <option>李昊天</option>
+                    <option>許雅婷</option>
+                    <option>劉梓涵</option>
+                    <option>李雅琪</option>
+                    <option>王子軒</option>
+                    <option>陳宇軒</option>
+                    <option>王建宏</option>
+                </select>
+            </div>
+            <div id="calendar">
+                <ul class="weekdays">
+                    <li>Sunday</li>
+                    <li>Monday</li>
+                    <li>Tuesday</li>
+                    <li>Wednesday</li>
+                    <li>Thursday</li>
+                    <li>Friday</li>
+                    <li>Saturday</li>
+                </ul>
+
+                <!-- Days from previous month -->
+
+                <ul class="days">
+                    <li class="day other-month">
+                        <div class="date">27</div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">28</div>
+                        <div class="event">
+                            <div class="event-desc">
+                                HTML 5 lecture with Brad Traversy from Eduonix
+                            </div>
+                            <div class="event-time">
+                                1:00pm to 3:00pm
+                            </div>
+                        </div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">29</div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">30</div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">31</div>
+                    </li>
+
+                    <!-- Days in current month -->
+
+                    <li class="day">
+                        <div class="date">1</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">2</div>
+                        <div class="event">
+                            <div class="event-desc">
+                                Career development @ Community College room #402
+                            </div>
+                            <div class="event-time">
+                                2:00pm to 5:00pm
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Row #2 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="date">3</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">4</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">5</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">6</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">7</div>
+                        <div class="event">
+                            <div class="event-desc">
+                                Group Project meetup
+                            </div>
+                            <div class="event-time">
+                                6:00pm to 8:30pm
+                            </div>
+                        </div>
+                    </li>
+                    <li class="day">
+                        <div class="date">8</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">9</div>
+                    </li>
+                </ul>
+
+                <!-- Row #3 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="date">10</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">11</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">12</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">13</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">14</div>
+                        <div class="event">
+                            <div class="event-desc">
+                                Board Meeting
+                            </div>
+                            <div class="event-time">
+                                1:00pm to 3:00pm
+                            </div>
+                        </div>
+                    </li>
+                    <li class="day">
+                        <div class="date">15</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">16</div>
+                    </li>
+                </ul>
+
+                <!-- Row #4 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="date">17</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">18</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">19</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">20</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">21</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">22</div>
+                        <div class="event">
+                            <div class="event-desc">
+                                Conference call
+                            </div>
+                            <div class="event-time">
+                                9:00am to 12:00pm
+                            </div>
+                        </div>
+                    </li>
+                    <li class="day">
+                        <div class="date">23</div>
+                    </li>
+                </ul>
+
+                <!-- Row #5 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="date">24</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">25</div>
+                        <div class="event">
+                            <div class="event-desc">
+                                Conference Call
+                            </div>
+                            <div class="event-time">
+                                1:00pm to 3:00pm
+                            </div>
+                        </div>
+                    </li>
+                    <li class="day">
+                        <div class="date">26</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">27</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">28</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">29</div>
+                    </li>
+                    <li class="day">
+                        <div class="date">30</div>
+                    </li>
+                </ul>
+
+                <!-- Row #6 -->
+
+                <ul class="days">
+                    <li class="day">
+                        <div class="date">31</div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">1</div> <!-- Next Month -->
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">2</div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">3</div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">4</div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">5</div>
+                    </li>
+                    <li class="day other-month">
+                        <div class="date">6</div>
+                    </li>
+                </ul>
+
+            </div><!-- /. calendar -->
+        </div>
+        <script>
+            !function () {
+                var today = moment();
+
+                function Calendar(selector, events) {
+                    this.el = document.querySelector(selector);
+                    this.events = events;
+                    this.current = moment().date(1);
+                    this.draw();
+                    var current = document.querySelector('.today');
+                    if (current) {
+                        var self = this;
+                        window.setTimeout(function () {
+                            self.openDay(current);
+                        }, 500);
+                    }
+                }
+
+                Calendar.prototype.draw = function () {
+                    //Create Header
+                    this.drawHeader();
+
+                    //Draw Month
+                    this.drawMonth();
+
+                    this.drawLegend();
+                }
+
+                Calendar.prototype.drawHeader = function () {
+                    var self = this;
+                    if (!this.header1) {
+                        //Create the header elements
+                        this.header1 = createElement('div', 'header1');
+                        this.header1.className = 'header1';
+
+                        this.title = createElement('h1');
+
+                        var right = createElement('div', 'right');
+                        right.addEventListener('click', function () { self.nextMonth(); });
+
+                        var left = createElement('div', 'left');
+                        left.addEventListener('click', function () { self.prevMonth(); });
+
+                        //Append the Elements
+                        this.header1.appendChild(this.title);
+                        this.header1.appendChild(right);
+                        this.header1.appendChild(left);
+                        this.el.appendChild(this.header1);
+                    }
+
+                    this.title.innerHTML = this.current.format('MMMM YYYY');
+                }
+
+                Calendar.prototype.drawMonth = function () {
+                    var self = this;
+
+                    this.events.forEach(function (ev) {
+                        ev.date = self.current.clone().date(Math.random() * (29 - 1) + 1);
+                    });
+
+
+                    if (this.month) {
+                        this.oldMonth = this.month;
+                        this.oldMonth.className = 'month out ' + (self.next ? 'next' : 'prev');
+                        this.oldMonth.addEventListener('webkitAnimationEnd', function () {
+                            self.oldMonth.parentNode.removeChild(self.oldMonth);
+                            self.month = createElement('div', 'month');
+                            self.backFill();
+                            self.currentMonth();
+                            self.fowardFill();
+                            self.el.appendChild(self.month);
+                            window.setTimeout(function () {
+                                self.month.className = 'month in ' + (self.next ? 'next' : 'prev');
+                            }, 16);
+                        });
+                    } else {
+                        this.month = createElement('div', 'month');
+                        this.el.appendChild(this.month);
+                        this.backFill();
+                        this.currentMonth();
+                        this.fowardFill();
+                        this.month.className = 'month new';
+                    }
+                }
+
+                Calendar.prototype.backFill = function () {
+                    var clone = this.current.clone();
+                    var dayOfWeek = clone.day();
+
+                    if (!dayOfWeek) { return; }
+
+                    clone.subtract('days', dayOfWeek + 1);
+
+                    for (var i = dayOfWeek; i > 0; i--) {
+                        this.drawDay(clone.add('days', 1));
+                    }
+                }
+
+                Calendar.prototype.fowardFill = function () {
+                    var clone = this.current.clone().add('months', 1).subtract('days', 1);
+                    var dayOfWeek = clone.day();
+
+                    if (dayOfWeek === 6) { return; }
+
+                    for (var i = dayOfWeek; i < 6; i++) {
+                        this.drawDay(clone.add('days', 1));
+                    }
+                }
+
+                Calendar.prototype.currentMonth = function () {
+                    var clone = this.current.clone();
+
+                    while (clone.month() === this.current.month()) {
+                        this.drawDay(clone);
+                        clone.add('days', 1);
+                    }
+                }
+
+                Calendar.prototype.getWeek = function (day) {
+                    if (!this.week || day.day() === 0) {
+                        this.week = createElement('div', 'week');
+                        this.month.appendChild(this.week);
+                    }
+                }
+
+                Calendar.prototype.drawDay = function (day) {
+                    var self = this;
+                    this.getWeek(day);
+
+                    //Outer Day
+                    var outer = createElement('div', this.getDayClass(day));
+                    outer.addEventListener('click', function () {
+                        self.openDay(this);
+                    });
+
+                    //Day Name
+                    var name = createElement('div', 'day-name', day.format('ddd'));
+
+                    //Day Number
+                    var number = createElement('div', 'day-number', day.format('DD'));
+
+
+                    //Events
+                    var events = createElement('div', 'day-events');
+                    this.drawEvents(day, events);
+
+                    outer.appendChild(name);
+                    outer.appendChild(number);
+                    outer.appendChild(events);
+                    this.week.appendChild(outer);
+                }
+
+                Calendar.prototype.drawEvents = function (day, element) {
+                    if (day.month() === this.current.month()) {
+                        var todaysEvents = this.events.reduce(function (memo, ev) {
+                            if (ev.date.isSame(day, 'day')) {
+                                memo.push(ev);
+                            }
+                            return memo;
+                        }, []);
+
+                        todaysEvents.forEach(function (ev) {
+                            var evSpan = createElement('span', ev.color);
+                            element.appendChild(evSpan);
+                        });
+                    }
+                }
+
+                Calendar.prototype.getDayClass = function (day) {
+                    classes = ['day'];
+                    if (day.month() !== this.current.month()) {
+                        classes.push('other');
+                    } else if (today.isSame(day, 'day')) {
+                        classes.push('today');
+                    }
+                    return classes.join(' ');
+                }
+
+                Calendar.prototype.openDay = function (el) {
+                    var details, arrow;
+                    var dayNumber = +el.querySelectorAll('.day-number')[0].innerText || +el.querySelectorAll('.day-number')[0].textContent;
+                    var day = this.current.clone().date(dayNumber);
+
+                    var currentOpened = document.querySelector('.details');
+
+                    //Check to see if there is an open detais box on the current row
+                    if (currentOpened && currentOpened.parentNode === el.parentNode) {
+                        details = currentOpened;
+                        arrow = document.querySelector('.arrow');
+                    } else {
+                        //Close the open events on differnt week row
+                        //currentOpened && currentOpened.parentNode.removeChild(currentOpened);
+                        if (currentOpened) {
+                            currentOpened.addEventListener('webkitAnimationEnd', function () {
+                                currentOpened.parentNode.removeChild(currentOpened);
+                            });
+                            currentOpened.addEventListener('oanimationend', function () {
+                                currentOpened.parentNode.removeChild(currentOpened);
+                            });
+                            currentOpened.addEventListener('msAnimationEnd', function () {
+                                currentOpened.parentNode.removeChild(currentOpened);
+                            });
+                            currentOpened.addEventListener('animationend', function () {
+                                currentOpened.parentNode.removeChild(currentOpened);
+                            });
+                            currentOpened.className = 'details out';
+                        }
+
+                        //Create the Details Container
+                        details = createElement('div', 'details in');
+
+                        //Create the arrow
+                        var arrow = createElement('div', 'arrow');
+
+                        //Create the event wrapper
+
+                        details.appendChild(arrow);
+                        el.parentNode.appendChild(details);
+                    }
+
+                    var todaysEvents = this.events.reduce(function (memo, ev) {
+                        if (ev.date.isSame(day, 'day')) {
+                            memo.push(ev);
+                        }
+                        return memo;
+                    }, []);
+
+                    this.renderEvents(todaysEvents, details);
+
+                    arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + 27 + 'px';
+                }
+
+                Calendar.prototype.renderEvents = function (events, ele) {
+                    //Remove any events in the current details element
+                    var currentWrapper = ele.querySelector('.events');
+                    var wrapper = createElement('div', 'events in' + (currentWrapper ? ' new' : ''));
+
+                    events.forEach(function (ev) {
+                        var div = createElement('div', 'event');
+                        var square = createElement('div', 'event-category ' + ev.color);
+                        var span = createElement('span', '', ev.eventName);
+
+                        div.appendChild(square);
+                        div.appendChild(span);
+                        wrapper.appendChild(div);
+                    });
+
+                    if (!events.length) {
+                        var div = createElement('div', 'event empty');
+                        var span = createElement('span', '', 'No Events');
+
+                        div.appendChild(span);
+                        wrapper.appendChild(div);
+                    }
+
+                    if (currentWrapper) {
+                        currentWrapper.className = 'events out';
+                        currentWrapper.addEventListener('webkitAnimationEnd', function () {
+                            currentWrapper.parentNode.removeChild(currentWrapper);
+                            ele.appendChild(wrapper);
+                        });
+                        currentWrapper.addEventListener('oanimationend', function () {
+                            currentWrapper.parentNode.removeChild(currentWrapper);
+                            ele.appendChild(wrapper);
+                        });
+                        currentWrapper.addEventListener('msAnimationEnd', function () {
+                            currentWrapper.parentNode.removeChild(currentWrapper);
+                            ele.appendChild(wrapper);
+                        });
+                        currentWrapper.addEventListener('animationend', function () {
+                            currentWrapper.parentNode.removeChild(currentWrapper);
+                            ele.appendChild(wrapper);
+                        });
+                    } else {
+                        ele.appendChild(wrapper);
+                    }
+                }
+
+                Calendar.prototype.drawLegend = function () {
+                    var legend = createElement('div', 'legend');
+                    var calendars = this.events.map(function (e) {
+                        return e.calendar + '|' + e.color;
+                    }).reduce(function (memo, e) {
+                        if (memo.indexOf(e) === -1) {
+                            memo.push(e);
+                        }
+                        return memo;
+                    }, []).forEach(function (e) {
+                        var parts = e.split('|');
+                        var entry = createElement('span', 'entry ' + parts[1], parts[0]);
+                        legend.appendChild(entry);
+                    });
+                    this.el.appendChild(legend);
+                }
+
+                Calendar.prototype.nextMonth = function () {
+                    this.current.add('months', 1);
+                    this.next = true;
+                    this.draw();
+                }
+
+                Calendar.prototype.prevMonth = function () {
+                    this.current.subtract('months', 1);
+                    this.next = false;
+                    this.draw();
+                }
+
+                window.Calendar = Calendar;
+
+                function createElement(tagName, className, innerText) {
+                    var ele = document.createElement(tagName);
+                    if (className) {
+                        ele.className = className;
+                    }
+                    if (innerText) {
+                        ele.innderText = ele.textContent = innerText;
+                    }
+                    return ele;
+                }
+            }();
+
+            !function () {
+                var data = [
+                    { eventName: 'Lunch Meeting w/ Mark', calendar: 'Work', color: 'orange' },
+                    { eventName: 'Interview - Jr. Web Developer', calendar: 'Work', color: 'orange' },
+                    { eventName: 'Demo New App to the Board', calendar: 'Work', color: 'orange' },
+                    { eventName: 'Dinner w/ Marketing', calendar: 'Work', color: 'orange' },
+
+                    { eventName: 'Game vs Portalnd', calendar: 'Sports', color: 'blue' },
+                    { eventName: 'Game vs Houston', calendar: 'Sports', color: 'blue' },
+                    { eventName: 'Game vs Denver', calendar: 'Sports', color: 'blue' },
+                    { eventName: 'Game vs San Degio', calendar: 'Sports', color: 'blue' },
+
+                    { eventName: 'School Play', calendar: 'Kids', color: 'yellow' },
+                    { eventName: 'Parent/Teacher Conference', calendar: 'Kids', color: 'yellow' },
+                    { eventName: 'Pick up from Soccer Practice', calendar: 'Kids', color: 'yellow' },
+                    { eventName: 'Ice Cream Night', calendar: 'Kids', color: 'yellow' },
+
+                    { eventName: 'Free Tamale Night', calendar: 'Other', color: 'green' },
+                    { eventName: 'Bowling Team', calendar: 'Other', color: 'green' },
+                    { eventName: 'Teach Kids to Code', calendar: 'Other', color: 'green' },
+                    { eventName: 'Startup Weekend', calendar: 'Other', color: 'green' }
+                ];
+
+
+
+                function addDate(ev) {
+
+                }
+
+                var calendar = new Calendar('#calendar', data);
+
+            }();
+        </script>
+
+
+
+
+</body>
+
+</html>
