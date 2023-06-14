@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>教練請假功能頁面</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #fef8f0f9;
+            color: #5f5d5d;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .header h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            line-height: 50px;
+            font-weight: 100;
+            letter-spacing: 1px;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff0000;
+            padding: 0px 10px;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .user .name {
+            margin-right: 10px;
+            color: #5f5d5d;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #5f5d5d;
+            padding: 20px;
+        }
+
+
+        .sidebar h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .sidebar li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar li a:hover {
+            color: #aaa;
+        }
+
+        .submenu {
+            margin-left: 10px;
+        }
+
+        .submenu ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            background-color: #fff;
+            color: #000;
+            display: none;
+        }
+
+        .submenu li {
+            margin-bottom: 5px;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        table td {
+            width: 14.28%;
+            /* 每個欄位佔表格的 1/7 寬度 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .truncate {
+            max-width: 0;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 600;
+            transition: 0.3s ease-in;
+            border-radius: 6px;
+        }
+
+        .btn {
+            color: #fff;
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+
+        #calendar {
+            width: 600px;
+            height: 400px;
+            margin-bottom: 20px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const headings = document.querySelectorAll('.sidebar h2');
+
+            headings.forEach((heading) => {
+                heading.addEventListener('click', (event) => {
+                    const subMenu = event.target.nextElementSibling;
+                    subMenu.style.display = subMenu.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/locale-all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Give Me Gym</div>
+        <div class="user">
+            <div class="name">User Name</div>
+            <button class="btn">登出</button>
+        </div>
+    </header>
+    <div class="body-Content" style="display: flex;">
+        <div class="sidebar">
+            <h1>首頁</h2>
+                <h2>員工管理</h2>
+                <ul>
+                    <li><a href="#">新增員工</a></li>
+                    <li><a href="#">查詢員工</a></li>
+                    <li><a href="#">員工權限</a></li>
+                </ul>
+
+                <h2>會員管理</h2>
+                <ul>
+                    <li><a href="#">新增會員</a></li>
+                    <li><a href="#">查詢會員</a></li>
+                    <li><a href="#">會員權限</a></li>
+                </ul>
+
+                <h2>商城管理</h2>
+                <ul>
+                    <li><a href="#">商品管理</a></li>
+                    <li><a href="#">訂單管理</a></li>
+                </ul>
+
+                <h2>教練管理</h2>
+                <ul>
+                    <li><a href="#">新增教練</a></li>
+                    <li><a href="#">查詢教練</a></li>
+                    <li><a href="#">教練班表</a></li>
+                </ul>
+
+                <h2>團課管理</h2>
+                <ul>
+                    <li><a href="#">新增團課</a></li>
+                    <li><a href="#">查詢團課</a></li>
+                    <li><a href="#">團課排班</a></li>
+                </ul>
+
+                <h2>客服管理</h2>
+                <ul>
+                    <li><a href="#">客戶查詢</a></li>
+                    <li><a href="#">訂單查詢</a></li>
+                    <li><a href="#">FAQ管理</a></li>
+                </ul>
+        </div>
+
+        <div id="calendar"></div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog"
+            aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationModalLabel">Confirm Day Off Request</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>請選擇欲請假的時段</p>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="disableDropdown">
+                                <label class="form-check-label" for="disableDropdown">整天</label>
+                            </div>
+                            <br />
+                            <select class="form-control" id="reasonDropdown">
+                                <option value="option1">早上（09:00-12:00）</option>
+                                <option value="option2">中午（13:30-16:30）</option>
+                                <option value="option3">晚上（18:30-21:30）</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="confirmRequestBtn">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('#calendar').fullCalendar({
+                    // header: {
+                    //     left: 'prev,next',
+                    //     center: 'title',
+                    //     right: ''
+                    // },
+                    events: [
+                        {
+                            title: '有氧',
+                            start: '2023-06-01 09:00:00',
+                            end: '2023-06-01 12:00:00'
+                        },
+                        {
+                            title: 'Zumba',
+                            start: '2023-06-02 13:30:00',
+                            end: '2023-06-02 16:30:00'
+                        },
+                        {
+                            title: '瑜珈',
+                            start: '2023-06-10 18:30:00',
+                            end: '2023-06-10 21:30:00'
+                        },
+                        {
+                            title: '皮拉提斯',
+                            start: '2023-06-14 09:00:00',
+                            end: '2023-06-14 12:00:00'
+                        },
+                        {
+                            title: '減脂',
+                            start: '2023-06-05 13:30:00',
+                            end: '2023-06-05 16:30:00'
+                        },
+                        {
+                            title: '功能性訓練',
+                            start: '2023-06-06 16:30:00',
+                            end: '2023-06-06 21:30:00'
+                        },
+                        {
+                            title: '客製化訓練',
+                            start: '2023-06-17 13:30:00',
+                            end: '2023-06-17 21:30:00'
+                        },
+                        {
+                            title: '重量訓練',
+                            start: '2023-06-18 18:30:00',
+                            end: '2023-06-18 21:30:00'
+                        },
+                        {
+                            title: 'HIIT訓練',
+                            start: '2023-07-19 09:00:00',
+                            end: '2023-07-19 12:00:00'
+                        },
+                        {
+                            title: '核心訓練',
+                            start: '2023-06-20 13:30:00',
+                            end: '2023-06-20 16:30:00'
+                        },
+                        {
+                            title: '腿部訓練',
+                            start: '2023-07-02 13:30:00',
+                            end: '2023-07-02 21:30:00'
+                        },
+                        {
+                            title: '腹肌訓練',
+                            start: '2023-07-22 13:30:00',
+                            end: '2023-07-22 21:30:00'
+                        },
+                        {
+                            title: 'TRX訓練',
+                            start: '2023-06-23 13:30:00',
+                            end: '2023-06-23 16:30:00'
+                        },
+                        {
+                            title: '壺鈴訓練',
+                            start: '2023-06-24 18:30:00',
+                            end: '2023-06-24 21:30:00'
+                        },
+                        {
+                            title: '飛輪',
+                            start: '2023-06-25 09:00:00',
+                            end: '2023-06-25 12:00:00'
+                        },
+                        {
+                            title: '攀岩',
+                            start: '2023-06-26 13:30:00',
+                            end: '2023-06-26 16:30:00'
+                        }
+                    ],
+
+                    selectable: true,
+                    selectHelper: true,
+                    select: function (start, end) {
+                        var formattedDate = moment(start).format('YYYY-MM-DD');
+                        $('#selectedDate').val(formattedDate);
+                        $('#confirmationModal').modal('show');
+                    }
+                });
+
+                $('#confirmRequestBtn').on('click', function () {
+                    $('#confirmationModal').modal('hide');
+                    $('#dayOffForm').submit();
+                });
+
+                $('#disableDropdown').on('change', function () {
+                    var isDisabled = $(this).is(':checked');
+                    $('#reasonDropdown').prop('disabled', isDisabled);
+                });
+            });
+        </script>
+</body>
+
+</html>

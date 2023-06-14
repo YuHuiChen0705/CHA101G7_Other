@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>COACH</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        select {
+            padding: 6px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            display: none;
+            /* Hide the file input */
+        }
+
+        #uploadButton {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #uploadButton:hover {
+            background-color: #45a049;
+        }
+
+        #previewImage {
+            max-width: 200px;
+            max-height: 200px;
+            display: none;
+            /* Hide the preview image initially */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>COACH</h1>
+
+    <form id="coachForm" onsubmit="return false;">
+        <h2>新增/修改教練資料</h2>
+        <label for="coachId">教練編號:</label>
+        <input type="text" id="coachId" name="coachId"><br><br>
+        <label for="coachName">教練名稱:</label>
+        <input type="text" id="coachName" name="coachName"><br><br>
+        <label for="coachDetial">教練簡介:</label>
+        <input type="text" id="coachDetial" name="coachDetial"><br><br>
+        <label for="coachPic">教練照片:</label>
+        <input type="file" id="coachPic" name="coachPic" accept="image/*" onchange="previewImage(event)">
+        <button id="uploadButton" onclick="document.getElementById('coachPic').click()">選擇檔案</button><br><br>
+        <img id="previewImage" alt="預覽圖片"><br><br>
+        <ul class="picture_list"></ul>
+        <label for="coachGender">教練性別:</label>
+        <select id="coachGender" name="coachGender">
+            <option value="male">男性</option>
+            <option value="female">女性</option>
+        </select><br><br>
+        <input type="submit" value="儲存" onclick="saveCoach()">
+        <input type="button" value="清除" onclick="clearForm()">
+    </form>
+
+    <h2>教練資料列表</h2>
+    <table id="coachTable">
+        <tr>
+            <th>教練編號</th>
+            <th>教練名稱</th>
+            <th>教練簡介</th>
+            <th>教練照片</th>
+            <th>教練性別</th>
+            <th>操作</th>
+        </tr>
+        <!-- 這裡可以使用 JavaScript 動態生成表格內容 -->
+    </table>
+
+    <script>
+        var coaches = []; // 儲存教練資料的陣列
+        var editingCoachId = null; // 要編輯的教練編號
+
+        // 新增或修改教練資料
+        function saveCoach() {
+            var coachId = document.getElementById("coachId").value;
+            var coachName = document.getElementById("coachName").value;
+            var coachDetial = document.getElementById("coachDetial").value;
+            var coachPic = document.getElementById("coachPic").files[0];
+            var coachGender = document.getElementById("coachGender").value;
+
+            if (coachId && coachName && coachDetial && coachPic && coachGender) {
+                var coachData = {
+                    coachId: coachId,
+                    coachName: coachName,
+                    coachDetial: coachDetial,
+                    coachPic: coachPic,
+                    coachGender: coachGender
+                };
+
+                if (editingCoachId) {
+                    // 修改現有教練資料
+                    var existingCoach = coaches.find(function (coach) {
+                        return coach.coachId === editingCoachId;
+                    });
+
+                    if (existingCoach) {
+                        existingCoach.coachId = coachId;
+                        existingCoach.coachName = coachName;
+                        existingCoach.coachDetial = coachDetial;
+                        existingCoach.coachPic = coachPic;
+                        existingCoach.coachGender = coachGender;
+                    }
+
+                    editingCoachId = null;
+                } else {
+                    // 新增教練資料
+                    coaches.push(coachData);
+                }
+
+                renderTable();
+                clearForm();
+            } else {
+                alert("請填寫完整的教練資料");
+            }
+        }
+
+        // 清除表單
+        function clearForm() {
+            document.getElementById("coachId").value = "";
+            document.getElementById("coachName").value = "";
+            document.getElementById("coachDetial").value = "";
+            document.getElementById("coachPic").value = "";
+            document.getElementById("coachGender").value = "male";
+            document.getElementById("previewImage").src = "";
+            document.getElementById("previewImage").style.display = "none";
+        }
+
+        // 刪除教練資料
+        function deleteCoach(coachId) {
+            var deleteIndex = -1;
+            for (var i = 0; i < coaches.length; i++) {
+                if (coaches[i].coachId === coachId) {
+                    deleteIndex = i;
+                    break;
+                }
+            }
+
+            if (deleteIndex !== -1) {
+                coaches.splice(deleteIndex, 1);
+                renderTable();
+            }
+        }
+
+        // 生成教練資料表格
+        function renderTable() {
+            var table = document.getElementById("coachTable");
+            table.innerHTML =
+                "<tr><th>教練編號</th><th>教練名稱</th><th>教練簡介</th><th>教練照片</th><th>教練性別</th><th>操作</th></tr>";
+
+            for (var i = 0; i < coaches.length; i++) {
+                var coach = coaches[i];
+                var row = table.insertRow();
+                row.insertCell().innerHTML = coach.coachId;
+                row.insertCell().innerHTML = coach.coachName;
+                row.insertCell().innerHTML = coach.coachDetial;
+                var img = document.createElement("img");
+                img.src = URL.createObjectURL(coach.coachPic);
+                img.alt = "教練照片";
+                img.width = 100;
+                img.height = 100;
+                row.insertCell().appendChild(img);
+                row.insertCell().innerHTML = coach.coachGender;
+                var editButton = document.createElement("button");
+                editButton.textContent = "修改";
+                editButton.addEventListener("click", createEditHandler(coach.coachId));
+                row.insertCell().appendChild(editButton);
+                row.insertCell().innerHTML =
+                    '<button onclick="deleteCoach(\'' + coach.coachId + '\')">刪除</button>';
+            }
+        }
+
+        // 建立編輯按鈕的事件處理器
+        function createEditHandler(coachId) {
+            return function () {
+                var coachData = coaches.find(function (coach) {
+                    return coach.coachId === coachId;
+                });
+
+                if (coachData) {
+                    document.getElementById("coachId").value = coachData.coachId;
+                    document.getElementById("coachName").value = coachData.coachName;
+                    document.getElementById("coachDetial").value = coachData.coachDetial;
+                    document.getElementById("coachPic").value = ""; // Clear the file input
+                    document.getElementById("coachGender").value = coachData.coachGender;
+                    document.getElementById("previewImage").src = URL.createObjectURL(
+                        coachData.coachPic
+                    );
+                    document.getElementById("previewImage").style.display = "block";
+                    editingCoachId = coachId;
+                }
+            };
+        }
+
+
+
+        // 預覽圖片
+        function previewImage(event) {
+            var preview = document.getElementById("previewImage");
+            var file = event.target.files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+                preview.style.display = "block";
+            };
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+                preview.style.display = "none";
+            }
+        }
+
+        window.addEventListener("load", function () {
+            var coachPicElement = document.getElementById("coachPic");
+            coachPicElement.addEventListener("change", function (e) {
+                var previewImageElement = document.getElementById("previewImage");
+                var pictureListElement = document.getElementsByClassName("picture_list")[0];
+                pictureListElement.innerHTML = ""; // 清空
+
+                for (let i = 0; i < this.files.length; i++) {
+                    let file = this.files[i];
+                    let reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.addEventListener("load", function () {
+                        let img = new Image();
+                        img.src = reader.result;
+                        img.addEventListener("load", function () {
+                            let MAX_WIDTH = 200; // 最大寬度
+                            let MAX_HEIGHT = 200; // 最大高度
+                            let width = img.width;
+                            let height = img.height;
+
+                            if (width > MAX_WIDTH || height > MAX_HEIGHT) {
+                                if (width > height) {
+                                    height *= MAX_WIDTH / width;
+                                    width = MAX_WIDTH;
+                                } else {
+                                    width *= MAX_HEIGHT / height;
+                                    height = MAX_HEIGHT;
+                                }
+                            }
+
+                            let canvas = document.createElement("canvas");
+                            canvas.width = width;
+                            canvas.height = height;
+                            let ctx = canvas.getContext("2d");
+                            ctx.drawImage(img, 0, 0, width, height);
+                            let resizedDataUrl = canvas.toDataURL(file.type);
+
+                            let imgHtml = `<img src="${resizedDataUrl}" class="preview">`;
+                            pictureListElement.insertAdjacentHTML("beforeend", imgHtml);
+                        });
+                    });
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
