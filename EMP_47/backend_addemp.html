@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- JQuery連結-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+  <!-- Datatable連結-->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+  <!-- RWD JS連結 -->
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+
+  <!-- RWD CSS連結 -->
+  <link rel="stylesheet" href=" https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+
+  <!-- CSS連結 -->
+  <link rel="stylesheet" href="/assets/css/dataTable.css">
+
+  <!-- bootstrap5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
+
+
+  <title>新增員工</title>
+  <style>
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-row label {
+      margin-right: 10px;
+    }
+
+    .form-row input[type="text"] {
+      margin-right: 10px;
+    }
+
+    .form-row input[type="password"] {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>新增員工</h1>
+
+  <form>
+    <div class="form-row">
+      <label for="employeeId">員工編號:</label>
+      <input type="text" id="employeeId" name="employeeId" placeholder="輸入員工編號">
+    </div>
+  </form>
+
+  <br>
+
+  <form>
+    <div class="form-row">
+      <label for="departmentId">部門編號:</label>
+      <input type="text" id="departmentId" name="departmentId" placeholder="輸入部門編號">
+    </div>
+  </form>
+
+  <br>
+
+  <form>
+    <div class="form-row">
+      <label for="employeeName">員工姓名:</label>
+      <input type="text" id="employeeName" name="employeeName" placeholder="輸入員工姓名">
+    </div>
+  </form>
+
+  <br>
+
+  <form>
+    <div class="form-row">
+      <label for="employeeMail">員工信箱:</label>
+      <input type="text" id="employeeMail" name="employeeMail" placeholder="輸入員工信箱">
+    </div>
+  </form>
+
+  <br>
+
+  <form>
+    <div class="form-row">
+
+      <label for="employeePassword">員工密碼:</label>
+
+
+      <input type="password" id="employeePassword" name="employeePassword" placeholder="輸入員工密碼">
+
+    </div>
+  </form>
+
+  <br>
+
+  <form>
+    
+    
+    <div class="form-row">
+
+    <label for="employee_state">員工狀態:</label>
+
+
+    
+    <select id="employee_state" name="employee_state">
+      <option value="在職" selected>在職</option>
+      <option value="離職">離職</option>
+
+
+    </select>
+  </div>
+
+
+
+  </form>
+
+  <br>
+ 
+  <div class="form-row">
+    <input type="submit" value="送出" onclick="submitForm(event)">
+  </div>
+
+  <br>
+
+  <div class="form-row">
+    <button type="button" onclick="clearForm()">清空</button>
+  </div>
+</body>
+
+<script>
+
+function submitForm(event) {
+  event.preventDefault(); // 防止表單提交
+
+  // 檢查每個欄位是否有值
+  var employeeId = document.getElementById("employeeId").value;
+  var departmentId = document.getElementById("departmentId").value;
+  var employeeName = document.getElementById("employeeName").value;
+  var employeeMail = document.getElementById("employeeMail").value;
+  var employeePassword = document.getElementById("employeePassword").value;
+
+  var emptyFields = []; // 儲存未填寫的欄位
+
+  if (employeeId === "") {
+    emptyFields.push("員工編號");
+  }
+  if (departmentId === "") {
+    emptyFields.push("部門編號");
+  }
+  if (employeeName === "") {
+    emptyFields.push("員工姓名");
+  }
+  if (employeeMail === "") {
+    emptyFields.push("員工信箱");
+  }
+  if (employeePassword === "") {
+    emptyFields.push("員工密碼");
+  }
+
+  if (emptyFields.length > 0) {
+    var message = "請填寫以下欄位：\n" + emptyFields.join(", ");
+    alert(message);
+    return;
+  }
+
+  // 如果所有欄位都有值，可以進行表單提交或其他處理
+  // ...
+}
+
+
+function clearForm() {
+  document.getElementById("employeeId").value = "";
+  document.getElementById("departmentId").value = "";
+  document.getElementById("employeeName").value = "";
+  document.getElementById("employeeMail").value = "";
+  document.getElementById("employeePassword").value = "";
+  document.getElementById("employee_state").selectedIndex = 0;
+}
+
+
+
+</script>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+  integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous">
+  </script>
+
+</html>

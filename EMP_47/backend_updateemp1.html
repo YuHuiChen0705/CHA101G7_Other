@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>更新員工資料</title>
+  <style>
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-row label {
+      margin-right: 10px;
+    }
+
+    .form-row input[type="text"] {
+      margin-right: 10px;
+      }
+  </style>
+</head>
+
+<body>
+  <h1>更新員工資料</h1>
+  <form>
+
+    <form>
+      <div class="form-row">
+        <label for="departmentId">部門編號:</label>
+        <input type="text" id="departmentId" name="departmentId" placeholder="輸入部門編號">
+      </div>
+    </form>
+  
+    <br>
+
+    <form>
+      <div class="form-row">
+        <label for="employeeName">員工姓名:</label>
+        <input type="text" id="employeeName" name="employeeName" placeholder="輸入員工姓名">
+      </div>
+    </form>
+
+    <br>
+
+    <form>
+      <div class="form-row">
+        <label for="employee_state">員工狀態:</label>
+        <select id="employee_state" name="employee_state">
+          <option value="在職" selected>在職</option>
+          <option value="離職">離職</option>
+        </select>
+      </div>
+    </form>
+
+    <br>
+
+    <input type="submit" value="更新">
+ 
+  
+</body>
+
+</html>
