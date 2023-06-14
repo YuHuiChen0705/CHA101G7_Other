@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="/css/style-starter2.css">
+
+<head>
+    <title>員工後台|新增會員</title>
+    <style>
+        body {
+            background-color: #fef8f0f9;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff0000;
+            padding: 0px 10px;
+
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .user .name {
+            margin-right: 10px;
+            color: #5f5d5d;
+        }
+
+        .sidebar {
+            float: left;
+            width: 130px;
+            background-color: #5f5d5d;
+            opacity: 0.8;
+            padding: 10px 15px;
+            margin: 0px 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .sidebar li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar li a:hover {
+            color: #aaa;
+        }
+
+        .submenu {
+            margin-left: 10px;
+        }
+
+        .submenu ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            background-color: #fff;
+            color: #000;
+            display: none;
+        }
+
+        .submenu li {
+            margin-bottom: 5px;
+        }
+
+        .nav-link {
+            padding: 0px;
+            margin-bottom: 0px;
+        }
+
+        .btn-style {
+            padding: 10px 32px;
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 600;
+            transition: 0.3s ease-in;
+            border-radius: 6px;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+
+        .m-4 {
+            margin: 1.5rem !important;
+        }
+    </style>
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+
+        .allform {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+            vertical-align: middle;
+            height: auto;
+            width: 1150px;
+            background: #e8e5e2;
+        }
+
+        body {
+            background: #e8e5e2;
+            font-family: 'Titillium Web', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: orange;
+            transition: .5s ease;
+
+            &:hover {
+                color: darken(orange, 5%);
+            }
+        }
+
+        .form {
+            background-color: white;
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+            text-align: left;
+            background: rgba(#13232f, .9);
+            padding: 40px;
+            width: 1000px;
+            margin: 0px 150px 100px 120px;
+            border-radius: 4px;
+            box-shadow: 12px 20px 30px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tab-group {
+            box-sizing: content-box;
+            letter-spacing: 1cm;
+            text-align: center;
+            height: fit-content;
+            font-size: 30px;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+        }
+
+        .tab a {
+            border-radius: 0.5ch;
+            color: orange;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 1cm, 0cm;
+            font-size: 36px;
+        }
+
+        .active1>a {
+            /* letter-spacing: 1cm; */
+            background: #e83e8c;
+            color: white;
+            box-shadow: #464f4d;
+        }
+
+
+        .tab-content>div:last-child {
+            display: none;
+        }
+
+
+        h1 {
+            text-align: center;
+            color: orangered;
+            font-weight: 500;
+            margin: 0 0 40px;
+        }
+
+        label {
+            position: absolute;
+            transform: translateY(6px);
+            left: 13px;
+            color: rgba(white, .5);
+            transition: all 0.25s ease;
+            /* -webkit-backface-visibility: hidden; */
+            pointer-events: none;
+            font-size: 22px;
+
+            .req {
+                margin: 2px;
+                color: #e83e8c;
+            }
+        }
+
+        label.active {
+            transform: translateY(50px);
+            left: 2px;
+            font-size: 14px;
+
+            .req {
+                opacity: 0;
+            }
+        }
+
+        label.highlight {
+            color: gray;
+        }
+
+        input,
+        textarea {
+            font-size: 22px;
+            display: block;
+            width: 99%;
+            height: 100%;
+            padding: 5px 10px;
+            background: none;
+            background-image: none;
+            border: 2px solid #a0b3b0;
+            color: black;
+            border-radius: 0;
+            transition: border-color .25s ease, box-shadow .25s ease;
+
+            &:focus {
+                outline: 0;
+                border-color: orangered;
+            }
+        }
+
+        textarea {
+            border: 2px solid black;
+            resize: vertical;
+        }
+
+        .inputText1 {
+            width: 8cm;
+        }
+
+        .inputText2 {
+            width: 12cm;
+        }
+
+        .field-wrap {
+            font-size: large;
+            color: black;
+            font-weight: 500;
+            margin: 0px 0px 10px 120px;
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .fixTitle {
+            margin: 8px;
+            font-size: large;
+            font-weight: 600;
+        }
+
+        #birthselect {
+            font-size: larger;
+        }
+
+        #year {
+            font-size: 20px;
+            width: 15%;
+            height: 100%;
+            padding: 5px 10px;
+            background: none;
+            background-image: none;
+            border: 1px solid #a0b3b0;
+            color: black;
+            border: 2px solid #a0b3b0;
+            resize: vertical;
+            position: relative;
+            /* margin-bottom: 40px; */
+        }
+
+        #month {
+            font-size: 20px;
+            width: 15%;
+            height: 100%;
+            padding: 5px 10px;
+            background: none;
+            background-image: none;
+            border: 1px solid #a0b3b0;
+            color: black;
+            border: 2px solid #a0b3b0;
+            resize: vertical;
+            position: relative;
+            /* margin-bottom: 40px; */
+        }
+
+        #day {
+            font-size: 20px;
+            width: 15%;
+            height: 100%;
+            padding: 5px 10px;
+            background: none;
+            background-image: none;
+            border: 1px solid #a0b3b0;
+            color: black;
+            border: 2px solid #a0b3b0;
+            resize: vertical;
+            position: relative;
+            /* margin-bottom: 40px; */
+        }
+
+        #region {
+            font-size: 20px;
+            width: 15%;
+            height: 100%;
+            padding: 5px 10px;
+            background: none;
+            background-image: none;
+            border: 1px solid #a0b3b0;
+            color: black;
+            border: 2px solid #a0b3b0;
+            resize: vertical;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        #district {
+            font-size: 20px;
+            width: 15%;
+            height: 100%;
+            padding: 5px 10px;
+            background: none;
+            background-image: none;
+            border: 1px solid #a0b3b0;
+            color: black;
+            border: 2px solid #a0b3b0;
+            resize: vertical;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .address3 {
+            font-size: 20px;
+            height: 15%;
+            margin-left: 14%;
+            margin-top: 3%;
+            color: black;
+            width: 20cm;
+        }
+
+        .req {
+            color: orangered;
+        }
+
+        .top-row {
+            &:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            >div {
+                float: left;
+                width: 48%;
+                margin-right: 4%;
+
+                &:last-child {
+                    margin: 0;
+                }
+            }
+        }
+
+        .error {
+            font-weight: 600;
+            margin: 0px 0px 0px 120px;
+            color: red;
+            margin-bottom: 10px;
+        }
+
+        .button-block {
+            border-radius: 100px;
+            outline: none;
+            border-radius: 0;
+            font-size: 25px;
+            font: weight 600px;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            border: none;
+            background-color: orangered;
+            color: white;
+            display: block;
+            height: 70px;
+            width: 30%;
+            margin: 0 auto;
+        }
+
+        .forgot {
+            margin-top: -20px;
+            text-align: right;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const headings = document.querySelectorAll('.sidebar h2');
+
+            headings.forEach((heading) => {
+                heading.addEventListener('click', (event) => {
+                    const subMenu = event.target.nextElementSibling;
+                    subMenu.style.display = subMenu.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Give Me Gym</div>
+        <div class="user">
+            <div class="name">User Name </div>
+            <a class="btn btn-style btn-primary  mt-4">登出</a>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <h1>首頁</h1>
+
+        <h2>員工管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="">新增員工</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">查詢員工</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">員工權限</a></li>
+        </ul>
+
+        <h2>會員管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="addMember.html">新增會員</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="inquireMember.html">查詢會員</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="statusMember.html">會員權限</a></li>
+        </ul>
+
+        <h2>商城管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">商品管理</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">訂單管理</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">庫存管理</a></li>
+        </ul>
+
+        <h2>教練管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">教練名單</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">新增教練</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">班表查看</a></li>
+        </ul>
+
+        <h2>團課管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">新增團課</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">查詢團課</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">團課排班</a></li>
+        </ul>
+
+        <h2>客服管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">客戶查詢</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">訂單查詢</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">FAQ管理</a></li>
+        </ul>
+    </div>
+    <article>
+        <div class="allform">
+            <div class="form">
+                <div class="tab-group">
+                </div>
+                </ul>
+                <div class="tab-content">
+                    <div id="memberData">
+                        <form>
+                            <h1>新增會員</h1>
+                            <div class="field-wrap">
+                                <div id="titleName2" class="fixTitle" style="float:left;">會員姓名:&emsp;</div>
+                                <input type="text" id="name2" class="inputText1">
+                            </div>
+                            <div class="field-wrap">
+                                <div id="titleEmali2" class="fixTitle" style="float:left">電子信箱:&emsp;</div>
+                                <input type="text" id="mail2" required autocomplete="off" class="inputText2" />
+                            </div>
+                            <div class="field-wrap">
+                                <div id="titlePhoneNumber2" class="fixTitle" style="float:left">手機號碼:&emsp;</div>
+                                <input type="text" id="phonenumber2" required autocomplete="off" class="inputText2" />
+                            </div>
+                            <div class="field-wrap">
+                                <div id="birthselect2" class="fixTitle" style="float:left">出生日期:&emsp;</div>
+                                <select id="year">
+                                    <option selected disabled value="0">選擇年份</option>
+                                    <option>2003年</option>
+                                    <option>2002年</option>
+                                    <option>2001年</option>
+                                    <option>2000年</option>
+                                    <option>1999年</option>
+                                    <option>1998年</option>
+                                    <option>1997年</option>
+                                    <option>1996年</option>
+                                    <option>1995年</option>
+                                    <option>1994年</option>
+                                    <option>1993年</option>
+                                    <option>1992年</option>
+                                    <option>1991年</option>
+                                    <option>1990年</option>
+                                    <option>1989年</option>
+                                    <option>1988年</option>
+                                    <option>1987年</option>
+                                    <option>1986年</option>
+                                    <option>1985年</option>
+                                    <option>1984年</option>
+                                    <option>1983年</option>
+                                    <option>1982年</option>
+                                    <option>1981年</option>
+                                    <option>1980年</option>
+                                    <option>1979年</option>
+                                    <option>1978年</option>
+                                    <option>1977年</option>
+                                    <option>1976年</option>
+                                    <option>1975年</option>
+                                    <option>1974年</option>
+                                    <option>1973年</option>
+                                    <option>1972年</option>
+                                    <option>1971年</option>
+                                    <option>1970年</option>
+                                    <option>1969年</option>
+                                    <option>1968年</option>
+                                    <option>1967年</option>
+                                    <option>1966年</option>
+                                    <option>1965年</option>
+                                    <option>1964年</option>
+                                    <option>1963年</option>
+                                    <option>1962年</option>
+                                    <option>1961年</option>
+                                    <option>1960年</option>
+                                    <option>1959年</option>
+                                    <option>1958年</option>
+                                    <option>1957年</option>
+                                    <option>1956年</option>
+                                    <option>1955年</option>
+                                    <option>1954年</option>
+                                    <option>1953年</option>
+                                    <option>1952年</option>
+                                    <option>1951年</option>
+                                    <option>1950年</option>
+                                    <option>1949年</option>
+                                    <option>1948年</option>
+                                    <option>1947年</option>
+                                    <option>1946年</option>
+                                    <option>1945年</option>
+                                    <option>1944年</option>
+                                    <option>1943年</option>
+                                    <option>1942年</option>
+                                    <option>1941年</option>
+                                    <option>1940年</option>
+                                    <option>1939年</option>
+                                    <option>1938年</option>
+                                    <option>1937年</option>
+                                    <option>1936年</option>
+                                    <option>1935年</option>
+                                    <option>1934年</option>
+                                    <option>1933年</option>
+                                    <option>1932年</option>
+                                    <option>1931年</option>
+                                    <option>1930年</option>
+                                    <option>1929年</option>
+                                    <option>1928年</option>
+                                    <option>1927年</option>
+                                    <option>1926年</option>
+                                    <option>1925年</option>
+                                    <option>1924年</option>
+                                    <option>1923年</option>
+                                    <option>1922年</option>
+                                    <option>1921年</option>
+                                    <option>1920年</option>
+                                </select>
+                                <select id="month">
+                                    <option selected disabled value="0">選擇月份</option>
+                                    <option value="1">1月</option>
+                                    <option value="2">2月</option>
+                                    <option value="3">3月</option>
+                                    <option value="4">4月</option>
+                                    <option value="5">5月</option>
+                                    <option value="6">6月</option>
+                                    <option value="7">7月</option>
+                                    <option value="8">8月</option>
+                                    <option value="9">9月</option>
+                                    <option value="10">10月</option>
+                                    <option value="11">11月</option>
+                                    <option value="12">12月</option>
+                                </select>
+                                <select id="day">
+                                    <option selected disabled>選擇日期</option>日
+                                </select>
+                            </div>
+                            <div class="field-wrap">
+                                <li id="address2" class="fixTitle" style="float:left">通訊地址:&emsp;</li>
+                                <!-- <li id="address2"class="fixTitle"style="float:left">通訊地址&emsp;</li> -->
+                                <select id="region">
+                                    <option selected disabled value="0">選擇縣市</option>
+                                    <option value="1">臺北市</option>
+                                    <option value="2">新北市</option>
+                                    <option value="3">桃園市</option>
+                                    <option value="4">臺中市</option>
+                                    <option value="5">臺南市</option>
+                                    <option value="6">高雄市</option>
+                                    <option value="7">基隆市</option>
+                                    <option value="8">新竹市</option>
+                                    <option value="9">嘉義市</option>
+                                    <option value="10">新竹縣</option>
+                                    <option value="11">苗栗縣</option>
+                                    <option value="12">彰化縣</option>
+                                    <option value="13">南投縣</option>
+                                    <option value="14">雲林縣</option>
+                                    <option value="15">嘉義縣</option>
+                                    <option value="16">屏東縣</option>
+                                    <option value="17">宜蘭縣</option>
+                                    <option value="18">花蓮縣</option>
+                                    <option value="19">臺東縣</option>
+                                    <option value="20">澎湖縣</option>
+                                    <option value="21">金門縣</option>
+                                    <option value="22">連江縣</option>
+                                </select>
+                                <select id="district">
+                                    <option selected disabled value="0">鄉鎮市區</option>
+                                </select>
+                                <input type="text" id="address3" required autocomplete="off"
+                                    style="width:12cm;height: 1.15cm;" class="address3" />
+                            </div>
+                            <div class="error" id="name-error2"></div>
+                            <div class="error" id="mail-error2"></div>
+                            <div class="error" id="password-error2"></div>
+                            <div class="error" id="phonenumber-error2"></div>
+                            <div class="error" id="birthselect-error2"></div>
+                            <div class="error" id="address-error2"></div>
+                            <button type="submit" id="submit2" class="button-block">新增會員</button>
+                        </form>
+                    </div>
+                    <div id="login">
+                        <h1></h1>
+                    </div>
+                </div><!-- tab-content -->
+            </div> <!-- /form -->
+        </div> <!-- /所有表格 -->
+        <!-- //contact form -->
+    </article>
+    <!--//MENU-JS-->
+    <script>   const data = {
+            '1': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日', '31日'],
+            '2': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日'],
+            '3': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日', '31日'],
+            '4': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日'],
+            '5': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日', '31日'],
+            '6': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日'],
+            '7': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日', '31日'],
+            '8': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日', '31日'],
+            '9': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日'],
+            '10': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日', '31日'],
+            '11': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日'],
+            '12': ['1日', '2日', '3日', '4日', '5日', '6日', '7日', '8日', '9日', '10日', '11日', '12日', '13日', '14日', '15日', '16日', '17日', '18日', '19日', '20日', '21日', '22日', '23日', '24日', '25日', '26日', '27日', '28日', '29日', '30日', '31日']
+        };
+        const day = document.querySelector('#day');
+        document.querySelector('#month').addEventListener('change', function (e) {
+            day.innerHTML = '';
+            const dayArr = data[e.target.value];
+            for (let text of dayArr) {
+                day.insertAdjacentHTML('beforeend', `<option>${text}</option>`);
+            }
+        });
+
+        const data2 = {
+            '1': ['松山區', '信義區', '大安區', '中山區', '中正區', '大同區', '萬華區', '文山區', '南港區', '內湖區', '士林區', '北投區'],
+            '2': ['板橋區', '三重區', '中和區', '永和區', '新莊區', '新店區', '樹林區', '鶯歌區', '三峽區', '淡水區', '汐止區', '瑞芳區', '土城區', '蘆洲區', '五股區', '泰山區', '林口區', '深坑區', '石碇區', '坪林區', '三芝區', '石門區', '八里區', '平溪區', '雙溪區', '貢寮區', '金山區', '萬里區', '烏來區'],
+            '3': ['中壢區', '桃園區', '大溪區', '楊梅區', '蘆竹區', '大園區', '龜山區', '八德區', '龍潭區', '平鎮區', '新屋區', '觀音區', '復興區'],
+            '4': ['中區', '東區', '南區', '西區', '北區', '西屯區', '南屯區', '北屯區', '豐原區', '東勢區', '大甲區', '清水區', '沙鹿區', '梧棲區', '后里區', '神岡區', '潭子區', '大雅區', '新社區', '石岡區', '外埔區', '大安區', '烏日區', '大肚區', '龍井區', '霧峰區', '太平區', '大里區', '和平區'],
+            '5': ['新營區', '鹽水區', '白河區', '柳營區', '後壁區', '東山區', '麻豆區', '下營區', '六甲區', '官田區', '大內區', '佳里區', '學甲區', '西港區', '七股區', '將軍區', '北門區', '新化區', '善化區', '新市區', '安定區', '山上區', '玉井區', '楠西區', '南化區', '左鎮區', '仁德區', '歸仁區', '關廟區', '龍崎區', '永康區', '東區', '南區', '北區', '安南區', '安平區', '中西區'],
+            '6': ['鹽埕區', '鼓山區', '左營區', '楠梓區', '三民區', '新興區', '前金區', '苓雅區', '前鎮區', '旗津區', '小港區', '鳳山區', '林園區', '大寮區', '大樹區', '大社區', '仁武區', '鳥松區', '岡山區', '橋頭區', '燕巢區', '田寮區', '阿蓮區', '路竹區', '湖內區', '茄萣區', '永安區', '彌陀區', '梓官區', '旗山區', '美濃區', '六龜區', '甲仙區', '杉林區', '內門區', '茂林區', '桃源區', '那瑪夏區'],
+            '7': ['中正區', '七堵區', '暖暖區', '仁愛區', '中山區', '安樂區', '信義區'],
+            '8': ['東區', '北區', '香山區'],
+            '9': ['東區', '西區'],
+            '10': ['竹北市', '關西鎮', '新埔鎮', '竹東鎮', '湖口鄉', '橫山鄉', '新豐鄉', '芎林鄉', '寶山鄉', '北埔鄉', '峨眉鄉', '尖石鄉', '五峰鄉'],
+            '11': ['苗栗市', '頭份市', '苑裡鎮', '通霄鎮', '竹南鎮', '後龍鎮', '卓蘭鎮', '大湖鄉', '公館鄉', '銅鑼鄉', '南庄鄉', '頭屋鄉', '三義鄉', '西湖鄉', '造橋鄉', '三灣鄉', '獅潭鄉', '泰安鄉'],
+            '12': ['彰化市', '員林市', '鹿港鎮', '和美鎮', '北斗鎮', '溪湖鎮', '田中鎮', '二林鎮', '線西鄉', '伸港鄉', '福興鄉', '秀水鄉', '花壇鄉', '芬園鄉', '大村鄉', '埔鹽鄉', '埔心鄉', '永靖鄉', '社頭鄉', '二水鄉', '田尾鄉', '埤頭鄉', '芳苑鄉', '大城鄉', '竹塘鄉', '溪州鄉'],
+            '13': ['南投市', '埔里鎮', '草屯鎮', '竹山鎮', '集集鎮', '名間鄉', '鹿谷鄉', '中寮鄉', '魚池鄉', '國姓鄉', '水里鄉', '信義鄉', '仁愛鄉'],
+            '14': ['斗六市', '斗南鎮', '虎尾鎮', '西螺鎮', '土庫鎮', '北港鎮', '古坑鄉', '大埤鄉', '莿桐鄉', '林內鄉', '二崙鄉', '崙背鄉', '麥寮鄉', '東勢鄉', '褒忠鄉', '臺西鄉', '元長鄉', '四湖鄉', '口湖鄉', '水林鄉'],
+            '15': ['太保市', '朴子市', '布袋鎮', '大林鎮', '民雄鄉', '溪口鄉', '新港鄉', '六腳鄉', '東石鄉', '義竹鄉', '鹿草鄉', '水上鄉', '中埔鄉', '竹崎鄉', '梅山鄉', '番路鄉', '大埔鄉', '阿里山鄉'],
+            '16': ['屏東市', '潮州鎮', '東港鎮', '恆春鎮', '萬丹鄉', '長治鄉', '麟洛鄉', '九如鄉', '里港鄉', '鹽埔鄉', '高樹鄉', '萬巒鄉', '內埔鄉', '竹田鄉', '新埤鄉', '枋寮鄉', '新園鄉', '崁頂鄉', '林邊鄉', '南州鄉', '佳冬鄉', '琉球鄉', '車城鄉', '滿州鄉', '枋山鄉', '三地門鄉', '霧臺鄉', '瑪家鄉', '泰武鄉', '來義鄉', '春日鄉', '獅子鄉', '牡丹鄉'],
+            '17': ['宜蘭市', '羅東鎮', '蘇澳鎮', '頭城鎮', '礁溪鄉', '壯圍鄉', '員山鄉', '冬山鄉', '五結鄉', '三星鄉', '大同鄉', '南澳鄉'],
+            '18': ['花蓮市', '鳳林鎮', '玉里鎮', '新城鄉', '吉安鄉', '壽豐鄉', '光復鄉', '豐濱鄉', '瑞穗鄉', '富里鄉', '秀林鄉', '萬榮鄉', '卓溪鄉'],
+            '19': ['臺東市', '成功鎮', '關山鎮', '卑南鄉', '大武鄉', '太麻里鄉', '東河鄉', '長濱鄉', '鹿野鄉', '池上鄉', '綠島鄉', '延平鄉', '海端鄉', '達仁鄉', '金峰鄉', '蘭嶼鄉'],
+            '20': ['馬公市', '湖西鄉', '白沙鄉', '西嶼鄉', '望安鄉', '七美鄉'],
+            '21': ['金城鎮', '金湖鎮', '金沙鎮', '金寧鄉', '烈嶼鄉', '烏坵鄉'],
+            '22': ['南竿鄉', '北竿鄉', '莒光鄉', '東引鄉'],
+        };
+        const district = document.querySelector('#district');
+        document.querySelector('#region').addEventListener('change', function (e) {
+            district.innerHTML = '';
+            const districtArr = data2[e.target.value];
+            for (let text of districtArr) {
+                district.insertAdjacentHTML('beforeend', `<option>${text}</option>`);
+            }
+        });
+    </script>
+    <script>//註冊頁面偵測使用者輸入錯誤
+        //取得元素
+        let name2 = document.getElementById("name2");
+        let mail2 = document.getElementById("mail2");
+        let phonenumber2 = document.getElementById("phonenumber2");
+        let year = document.getElementById("year");
+        let month = document.getElementById("month");
+        let district2 = document.getElementById("district");
+        let address3 = document.getElementById("address3");
+        //錯誤顯示
+        let nameError2 = document.getElementById("name-error2");
+        let mailError2 = document.getElementById("mail-error2");
+        let phonenumberError2 = document.getElementById("phonenumber-error2");
+        let birthselectError2 = document.getElementById("birthselect-error2")
+        let addressError2 = document.getElementById("address-error2");
+        let clearError = document.querySelectorAll(".error");
+
+        //按鈕
+        let submit2 = document.getElementById("submit2");
+        //點擊按鈕，觸發事件(偵測輸入欄位是否符合規定)
+        submit2.addEventListener("click", function (event) {
+            let nameValue2 = name2.value.trim();
+            let mailValue2 = mail2.value.trim();
+            let phonenumberValue2 = phonenumber2.value.trim();
+            let monthValue = month.value.trim();
+            let addressValue3 = address3.value.trim();
+            var districtValue = district2.value.trim();
+            //偵測姓名欄位
+            while (true) {
+                for (i = 0; i < clearError.length; i++) {
+                    clearError[i].innerHTML = "";
+                }
+                if (nameValue2.length <= 2) {
+                    name2.value = "";
+                    nameError2.innerHTML = "請輸入姓名。";
+                    alert("請輸入姓名");
+                    event.preventDefault();
+                    break;
+                } if (!nameValue2.match("[\u4E00-\u9Fa5]+")) {//判斷是否為中文名
+                    name2.value = "";
+                    nameError2.innerHTML = "請輸入中文姓名。";
+                    alert("請輸入中文姓名。");
+                    break;
+                }
+                //偵測信箱欄位
+                if (mailValue2.length < 6) {
+                    mail2.value = "";
+                    mailError2.innerHTML = "請輸入電子信箱。";
+                    alert("請輸入電子信箱");
+                    event.preventDefault();
+                    break;
+                } if (!mailValue2.match(/^\w{6,20}@\w{2,8}\.com$/)) {//判斷是否為信箱格式
+                    mail2.value = "";
+                    mailError2.innerHTML = "請輸入正確的電子信箱地址。";
+                    alert("請輸入正確的電子信箱地址");
+                    break;
+                }
+                //偵測手機號碼
+                if (!phonenumberValue2.match(/^(09)[0-9]{8}$/)) {
+                    phonenumberError2.innerHTML = "手機號碼輸入錯誤";
+                    alert("手機號碼輸入錯誤");
+                    phonenumber2.value = "";
+                    event.preventDefault();
+                    break;
+                }
+                //偵測生日日期是否為空值
+                if (monthValue === "0") {
+                    birthselectError2.innerHTML = "出生日期未選取";
+                    alert("出生日期未選取");
+                    event.preventDefault();
+                    break;
+                }
+                //判斷地址是否為空值
+                if (districtValue === "0") {
+                    addressError2.innerHTML = "行政區未選取";
+                    alert("行政區未選取");
+                    event.preventDefault();
+                    break;
+                } if (addressValue3.length < 5) {
+                    addressError2.innerHTML = "地址輸入錯誤";
+                    address3.value = "";
+                    alert("地址輸入錯誤");
+                    break;
+                } if (addressValue3.match(/^[a-zA-Z]+\w*/g)) {
+                    addressError2.innerHTML = "地址輸入不能為英文";
+                    alert("地址輸入不能為英文");
+                    address3.value = "";
+                    //不能為英文
+                    break;
+                }
+                else {
+                    addressError2.innerHTML = "";
+                    alert("已寄出電子信件至會員信箱");
+                    //還可以再繼續，跳轉畫面
+                    break;
+                }
+            }
+
+        });
+    </script>
+</body>
+
+</html>
