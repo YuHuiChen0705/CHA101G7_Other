@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>班表</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        select {
+            padding: 6px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>班表</h1>
+
+    <form id="scheduleForm" onsubmit="return false;">
+        <h2>新增/修改教練休假表</h2>
+        <label for="coachDayoffId">教練休假表編號:</label>
+        <input type="text" id="coachDayoffId" name="coachDayoffId"><br><br>
+        <label for="coachId">教練編號:</label>
+        <input type="text" id="coachId" name="coachId"><br><br>
+        <label for="coachDayoffDate">休假日期:</label>
+        <input type="text" id="coachDayoffDate" name="coachDayoffDate"><br><br>
+        <label for="coachDayoffTime">休假時段:</label>
+        <input type="text" id="coachDayoffTime" name="coachDayoffTime"><br><br>
+        <input type="submit" value="儲存" onclick="saveSchedule()">
+        <input type="submit" value="清除" onclick="clearForm()">
+    </form>
+
+    <h2>教練休假表列表</h2>
+    <table id="scheduleTable">
+        <tr>
+            <th>教練休假表編號</th>
+            <th>教練編號</th>
+            <th>休假日期</th>
+            <th>休假時段</th>
+            <th>操作</th>
+        </tr>
+    </table>
+
+    <script>
+        var schedules = []; // 儲存教練休假表資料的陣列
+        var editIndex = -1; // 用於追蹤正在編輯的索引
+
+        // 新增或修改教練休假表資料
+        function saveSchedule() {
+            var coachDayoffId = document.getElementById("coachDayoffId").value;
+            var coachId = document.getElementById("coachId").value;
+            var coachDayoffDate = document.getElementById("coachDayoffDate").value;
+            var coachDayoffTime = document.getElementById("coachDayoffTime").value;
+
+            if (coachDayoffId && coachId && coachDayoffDate && coachDayoffTime) {
+                var scheduleData = {
+                    coachDayoffId: coachDayoffId,
+                    coachId: coachId,
+                    coachDayoffDate: coachDayoffDate,
+                    coachDayoffTime: coachDayoffTime
+                };
+
+                if (editIndex !== -1) {
+                    // 修改現有教練休假表資料
+                    schedules[editIndex] = scheduleData;
+                    editIndex = -1; // 編輯完成後重置編輯索引
+                } else {
+                    // 新增教練休假表資料
+                    schedules.push(scheduleData);
+                }
+
+                renderTable();
+                clearForm();
+            } else {
+                alert("請填寫完整的教練休假表資料");
+            }
+        }
+
+        // 編輯教練休假表資料
+        function editSchedule(coachDayoffId) {
+            var editIndex = -1;
+            for (var i = 0; i < schedules.length; i++) {
+                if (schedules[i].coachDayoffId === coachDayoffId) {
+                    editIndex = i;
+                    break;
+                }
+            }
+
+            if (editIndex !== -1) {
+                var scheduleData = schedules[editIndex];
+                document.getElementById("coachDayoffId").value = scheduleData.coachDayoffId;
+                document.getElementById("coachId").value = scheduleData.coachId;
+                document.getElementById("coachDayoffDate").value = scheduleData.coachDayoffDate;
+                document.getElementById("coachDayoffTime").value = scheduleData.coachDayoffTime;
+                editIndex = editIndex;
+            }
+        }
+
+        // 清除表單
+        function clearForm() {
+            document.getElementById("coachDayoffId").value = "";
+            document.getElementById("coachId").value = "";
+            document.getElementById("coachDayoffDate").value = "";
+            document.getElementById("coachDayoffTime").value = "";
+            editIndex = -1; // 清除編輯索引
+        }
+
+        // 刪除教練休假表資料
+        function deleteSchedule(coachDayoffId) {
+            var deleteIndex = -1;
+            for (var i = 0; i < schedules.length; i++) {
+                if (schedules[i].coachDayoffId === coachDayoffId) {
+                    deleteIndex = i;
+                    break;
+                }
+            }
+
+            if (deleteIndex !== -1) {
+                schedules.splice(deleteIndex, 1);
+                renderTable();
+            }
+        }
+
+        // 生成教練休假表資料表格
+        function renderTable() {
+            var table = document.getElementById("scheduleTable");
+            table.innerHTML = "<tr><th>教練休假表編號</th><th>教練編號</th><th>休假日期</th><th>休假時段</th><th>操作</th></tr>";
+
+            for (var i = 0; i < schedules.length; i++) {
+                var schedule = schedules[i];
+                var row = table.insertRow();
+                row.insertCell().innerHTML = schedule.coachDayoffId;
+                row.insertCell().innerHTML = schedule.coachId;
+                row.insertCell().innerHTML = schedule.coachDayoffDate;
+                row.insertCell().innerHTML = schedule.coachDayoffTime;
+                row.insertCell().innerHTML = '<button onclick="editSchedule(\'' + schedule.coachDayoffId + '\')">編輯</button> ' +
+                    '<button onclick="deleteSchedule(\'' + schedule.coachDayoffId + '\')">刪除</button>';
+            }
+        }
+    </script>
+</body>
+
+</html>
