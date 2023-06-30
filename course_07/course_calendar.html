@@ -14,7 +14,57 @@
   <link rel="stylesheet" href="assets/css/style-starter.css">
 
   <!-- 週歷CSS -->
-  <link rel="stylesheet" href="calendar.css">
+  <style>
+    table.tftable,
+    table.table-count {
+      font-size: 25px;
+      color: #333333;
+      width: 100%;
+      border-width: 1px;
+      border-collapse: collapse;
+    }
+
+    table tbody tr:nth-child(2n+1) {
+      background: #F5F5F5;
+    }
+
+    table.table-count th,
+    table.table-count td {
+      font-weight: 400;
+      font-size: 20px;
+      font-style: normal;
+      border-width: 1px;
+      border-style: solid;
+      border-color: black;
+      text-align: center;
+    }
+
+    table.tftable-count th,
+    table.tftable-count td {
+      font-weight: 400;
+      font-size: 12px;
+      border-width: 1px;
+      padding: 8px;
+      border: solid;
+      border-color: #e4e4e4;
+      text-align: center;
+      text-align: center;
+    }
+
+    .tftable {
+      margin-left: 1%;
+      margin-bottom: 10px;
+      margin-top: 10px;
+    }
+
+    table.tftable tr:hover {
+      background: #c3ecff;
+    }
+
+    .tftable>thead>tr:hover {
+      background: white;
+    }
+  </style>
 </head>
 
 <body>
@@ -103,69 +153,75 @@
   </section>
   <!-- ====================================================================== -->
 
-  <!-- 課程按鈕 -->
 
+  <div id="kechengList" tabindex="-1" style="background-color: white; height: 800px;">
+    <div>
+      <div>
 
-  <div class="classes-button">
-    <div style="width:300px;height:20px; margin: 0 auto;">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-          data-bs-toggle="dropdown" aria-expanded="false"
-          style="background-color:rgb(255, 40, 40) ;color: white;border:0px;margin-top: 30px;margin-left: 70px;">
-          課表查詢
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">所有課程</a></li>
-          <li><a class="dropdown-item" href="#">有氧課程</a></li>
-          <li><a class="dropdown-item" href="#">飛輪課程</a></li>
-          <li><a class="dropdown-item" href="#">瑜珈課程</a></li>
-          <li><a class="dropdown-item" href="#">攀岩課程</a></li>
-        </ul>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-          data-bs-toggle="dropdown" aria-expanded="false"
-          style="background-color: rgb(255, 40, 40);color: white;border:0px;margin-top: 30px;">
-          教練
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">所有教練</a></li>
-          <li><a class="dropdown-item" href="#">教練A</a></li>
-          <li><a class="dropdown-item" href="#">教練B</a></li>
-          <li><a class="dropdown-item" href="#">教練C</a></li>
-          <li><a class="dropdown-item" href="#">教練D</a></li>
-          <li><a class="dropdown-item" href="#">教練E</a></li>
-          <li><a class="dropdown-item" href="#">教練F</a></li>
-          <li><a class="dropdown-item" href="#">教練G</a></li>
-          <li><a class="dropdown-item" href="#">教練H</a></li>
-        </ul>
-      </div> 　
-    </div>　
-  </div>
+        <div>
+          <div style="padding: 30px;">
+            <h2 style="text-align: center;">當月課程表</h2>
+          </div>
+          <div>
+            <button id="prevWeekBtn" class="btn btn-danger">上一週</button>
+            <button id="nextWeekBtn" class="btn btn-danger" style="float: right;">下一週</button>
+          </div>
+          <table class="tftable" style="height: 600px; float: right;">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" style="text-align: center;">星期一</th>
+                <th scope="col" style="text-align: center;">星期二</th>
+                <th scope="col" style="text-align: center;">星期三</th>
+                <th scope="col" style="text-align: center;">星期四</th>
+                <th scope="col" style="text-align: center;">星期五</th>
+                <th scope="col" style="text-align: center;">星期六</th>
+                <th scope="col" style="text-align: center;">星期日</th>
+              </tr>
+            </thead>
 
-  <!-- 課程按鈕 -->
+            <tbody style="text-align: center;">
+              <tr style="height: 80px;">
+                <th scope="row">早</th>
+                <td id="table_1_0"></td>
+                <td id="table_2_0"></td>
+                <td id="table_3_0"></td>
+                <td id="table_4_0"></td>
+                <td id="table_5_0"></td>
+                <td id="table_6_0"></td>
+                <td id="table_7_0"></td>
+              </tr>
 
+              <tr style="height: 80px;">
+                <th scope="row">午</th>
+                <td id="table_1_1"></td>
+                <td id="table_2_1"></td>
+                <td id="table_3_1"></td>
+                <td id="table_4_1"></td>
+                <td id="table_5_1"></td>
+                <td id="table_6_1"></td>
+                <td id="table_7_1"></td>
+              </tr>
 
-  <div class="member-orderedcalendar"
-    style=" margin-top: 50px;height: 150px; font-size: 20pt;display: grid;align-items: center ;text-align: center;">
-    當月課表
-  </div>
+              <tr style="height: 80px;">
+                <th scope="row">晚</th>
+                <td id="table_1_2"></td>
+                <td id="table_2_2"></td>
+                <td id="table_3_2"></td>
+                <td id="table_4_2"></td>
+                <td id="table_5_2"></td>
+                <td id="table_6_2"></td>
+                <td id="table_7_2"></td>
+              </tr>
 
+            </tbody>
+          </table>
 
+        </div>
 
-  <!-- 週歷 -->
-  <div class="calendar">
-    <div class="header" style="background-color: white;">
-
-      <h2 id="currentWeek">本週</h2>
-      <button type="button" class="btn btn-warning" id="previousWeek">上一週</button>
-      <button type="button" class="btn btn-warning" id="nextWeek" style="margin-left: 600px;">下一週</button>
+      </div>
     </div>
-
-    <div class="dates" id="datesContainer" style="font-weight: 2px;font-size: 20px;">
-      <!-- 日期 JavaScript 動態生成 -->
-    </div>
   </div>
-
-
 
 
 
@@ -272,6 +328,105 @@
       }
     </script>
     <!-- /move top -->
+
+
+    <script>
+      // 當前顯示的日期範圍的開始日期
+      var currentDate = new Date();
+
+      // 更新表格中的日期欄位
+      function updateDates() {
+        var tableHeader = document.querySelector("#kechengList table thead tr");
+        var currentDay = currentDate.getDay(); // 當前日期的星期幾 (0-6，0 表示星期日)
+
+        // 清空原有的日期欄位
+        tableHeader.innerHTML = "<th scope='col'></th>";
+
+        // 設置星期的日期
+        for (var i = 0; i < 7; i++) {
+          var date = new Date(currentDate);
+          date.setDate(date.getDate() - currentDay + i);
+          var formattedDate = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric' });
+          tableHeader.innerHTML += "<th scope='col' style='text-align: center;'>" + formattedDate + "</th>";
+        }
+      }
+      for (var i = 0; i < 6; i++) {
+        let date = new Date(kecheng[i].CourseScheduleDate);
+        let weekday = date.getDay();
+        for (var j = 1; j < 3; j++) {
+          $("#table_" + j + "_" + i).html("");
+
+          // 课程表
+          $("#table_" + weekday + "_" + kecheng[i].courseScheduleTime).html(kecheng[i].REGISTRATIONPERIOD_ID + "<br>" + kecheng[i].courseScheduleId + "<br>" + kecheng[i].coachId);
+        }
+      }
+
+
+
+      // 上一週按鈕
+      document.getElementById("prevWeekBtn").addEventListener("click", function () {
+        currentDate.setDate(currentDate.getDate() - 7);
+        updateDates();
+        updateTable();
+      });
+
+      // 下一週按鈕
+      document.getElementById("nextWeekBtn").addEventListener("click", function () {
+        currentDate.setDate(currentDate.getDate() + 7);
+        updateDates();
+        updateTable();
+      });
+
+      // 初始化課程表
+      updateDates();
+      updateTable();
+
+    </script>
+
+
+
+
+
+
+
+    <!-- 課程Ajex -->
+    <script>
+
+      // var kecheng = [
+      //   { courseScheduleId: '1', courseScheduleTime: "1", REGISTRATIONPERIOD_ID: '1', CourseScheduleDate: '2023-06-23', coachId: '1' }
+      // ]
+
+      // let date = new Date(Data[i].CourseScheduleDate);
+      // let weekday = date.getDay();
+      // for (var i = 0; i < 6; i++) {
+      //   for (var j = 1; j < 3; j++) {
+      //     $("#table_" + j + "_" + i).html("");
+
+      //     // 課程表
+      //     $("#table_" + weekday + "_" + data[i].courseScheduleTime).html(data[i].REGISTRATIONPERIOD_ID + "<br>" + data[i].courseScheduleId + "<br>" + data[i].coachId);
+
+      //   }
+      // }
+
+
+
+     
+      // function getkecheng() {
+      //   $.ajex({
+      //     type: "get",
+      //     url: "",
+      //     success: function (data) {
+      //       for (var i = 0; i < 6; i++) {
+      //         for (var j = 1, j< 6; j++) {
+      //           $("#table_" + data[i].week + "_" + data[i].jieci).html(data[i].coursename + "<br>" + data[i].courseSchedule + "<br>" + dataa[i].coachname);
+
+      //         }
+      //       }
+      //     }
+
+      //   })
+      // }
+    </script>
   </section>
 
 
@@ -285,129 +440,7 @@
   <script src="assets/js/owl.carousel.js"></script>
   <!-- script for banner slider-->
   <script>
-    $(document).ready(function () {
-      $('.owl-one').owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: false,
-        responsiveClass: true,
-        autoplay: false,
-        autoplayTimeout: 5000,
-        autoplaySpeed: 1000,
-        autoplayHoverPause: false,
-        responsive: {
-          0: {
-            items: 1,
-            nav: false
-          },
-          480: {
-            items: 1,
-            nav: false
-          },
-          667: {
-            items: 1,
-            nav: true
-          },
-          1000: {
-            items: 1,
-            nav: true
-          }
-        }
-      })
-    })
-  </script>
-  <!-- //script -->
 
-  <!-- script for tesimonials carousel slider -->
-  <script>
-    $(document).ready(function () {
-      $(".owl-two").owlCarousel({
-        loop: true,
-        margin: 20,
-        nav: false,
-        responsiveClass: true,
-        responsive: {
-          0: {
-            items: 1,
-            nav: false
-          },
-          768: {
-            items: 2,
-            nav: false
-          },
-          1000: {
-            items: 3,
-            nav: false,
-            loop: false
-          }
-        }
-      })
-    })
-  </script>
-  <!-- //script for tesimonials carousel slider -->
-
-  <script>
-    $(document).ready(function () {
-      $('.owl-carousel-posts').owlCarousel({
-        loop: true,
-        margin: 0,
-        responsiveClass: true,
-        autoplay: true,
-        autoplayTimeout: 2000,
-        autoplaySpeed: 1000,
-        autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 2,
-            nav: false
-          },
-          480: {
-            items: 3,
-            nav: true,
-            margin: 0
-          },
-          736: {
-            items: 4,
-            nav: true,
-            margin: 0
-          },
-          1000: {
-            items: 5,
-            nav: true,
-            margin: 0
-          }
-        }
-      })
-    })
-  </script>
-  <!-- /slider -->
-
-  <!-- script for teams1-->
-  <script>
-    $(document).ready(function () {
-      $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 0,
-        responsiveClass: true,
-        responsive: {
-          0: {
-            items: 1,
-            nav: true
-          },
-          400: {
-            items: 2,
-            nav: true,
-            margin: 20
-          },
-          1000: {
-            items: 4,
-            nav: true,
-            loop: true,
-            margin: 25
-          }
-        }
-      })
-    })
   </script>
   <!-- //script for teams1-->
 
@@ -420,43 +453,6 @@
   </script>
   <!-- //stats number counter -->
 
-  <!-- disable body scroll which navbar is in active -->
-  <script>
-    $(function () {
-      $('.navbar-toggler').click(function () {
-        $('body').toggleClass('noscroll');
-      })
-    });
-  </script>
-  <!-- disable body scroll which navbar is in active -->
-
-  <!--/MENU-JS-->
-  <script>
-    $(window).on("scroll", function () {
-      var scroll = $(window).scrollTop();
-
-      if (scroll >= 80) {
-        $("#site-header").addClass("nav-fixed");
-      } else {
-        $("#site-header").removeClass("nav-fixed");
-      }
-    });
-
-    //Main navigation Active Class Add Remove
-    $(".navbar-toggler").on("click", function () {
-      $("header").toggleClass("active");
-    });
-    $(document).on("ready", function () {
-      if ($(window).width() > 991) {
-        $("header").removeClass("active");
-      }
-      $(window).on("resize", function () {
-        if ($(window).width() > 991) {
-          $("header").removeClass("active");
-        }
-      });
-    });
-  </script>
   <!--//MENU-JS-->
 
   <script src="assets/js/bootstrap.min.js"></script>

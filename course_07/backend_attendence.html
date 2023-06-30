@@ -229,29 +229,30 @@
             </div>
         </div>
     </aside>
-
     <section class="py-5" style="flex: 1;">
         <div class="container">
-            <h3 class="text-white mb-4">消息管理</h3>
-            <div class="card shadow">
-                <div class="card-header py-3">
-                    <a href="AddNews"><button type="button" class="btn btn-dark" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
-                            新增消息
-                        </button></a>
-                </div>
 
+            <div class="card shadow">
+                <div class="card-header py-3" style="color: black">
+                    點名系統
+                </div>
                 <div class="card-body">
                     <div class="table-responsive table mt-2" id="dataTable" role="grid"
                         aria-describedby="dataTable_info">
+                        <select id='deptnoOptions' style="display:grid; height: 20px;">
+                            <option value='0'>當日課程</option>
+                            <option value='10'>課程1</option>
+                            <option value='20'>課程2</option>
+                            <option value='30'>課程3</option>
+                        </select>
                         <table id="myTable" class="table table-striped table-hover" style=" width:100% ">
                             <thead>
                                 <tr>
                                     <!--標題-->
-                                    <th class="align-middle">編號</th>
-                                    <th class="align-middle">圖片</th>
-                                    <th class="align-middle">上架時間</th>
-                                    <th class="align-middle">修改</th>
+                                    <th class="align-middle">課程</th>
+                                    <th class="align-middle">日期</th>
+                                    <th class="align-middle">姓名</th>
+                                    <th class="align-middle">狀態</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -261,14 +262,18 @@
                                     <td class="align-middle" th:text="${NewsVo.newsImg}"></td>
                                     <td class="align-middle" th:text="${NewsVo.newsTime}"></td>
                                     <td class="align-middle">
-                                        <a href="UpdateNews">
+                                        <a href="">
                                             <button type="button" class="btn btn-dark" data-bs-toggle="modal"
                                                 data-bs-target="#staticUpdate">
-                                                修改
+                                                出席
                                             </button>
                                         </a>
                                     </td>
                                 </tr>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal" style="float:right; margin: 20px 50px;">
+                                    送出
+                                </button>
 
                             </tbody>
                         </table>
@@ -277,7 +282,26 @@
             </div>
         </div>
     </section>
-
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color: #000;">最後確認</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="color: #000;">
+                    你確定要送出嗎?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button submit" class="btn btn-danger id= submit ">確定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>>
 
 
 
