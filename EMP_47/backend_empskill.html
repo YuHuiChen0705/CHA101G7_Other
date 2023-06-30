@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>員工權限表</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    td.text-center {
+      text-align: center;
+    }
+    td.checkbox {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>員工權限表</h1>
+  <table>
+    <tr>
+      <th>EMPLOYEE_ID</th>
+      <th>EMPLOYEE_NAME</th>
+      <th>ACCESS_NAME</th>
+      <th>權限修改</th>
+    </tr>
+    <tr>
+      <td>001</td>
+      <td>黃家豪</td>
+      <td><input type="checkbox" id="permission_001" checked disabled>
+          <label for="permission_001">員工管理</label></td>
+      <td class="text-center"><button onclick="editPermission('001')">修改</button></td>
+    </tr>
+    <tr>
+      <td>002</td>
+      <td>陳志明</td>
+      <td><input type="checkbox" id="permission_002_1" checked disabled>
+          <label for="permission_002_1">會員管理</label><br>
+          <input type="checkbox" id="permission_002_2" checked disabled>
+          <label for="permission_002_2">商城管理</label><br>
+          <input type="checkbox" id="permission_002_3" checked disabled>
+          <label for="permission_002_3">教練管理</label><br>
+          <input type="checkbox" id="permission_002_4" checked disabled>
+          <label for="permission_002_4">團課管理</label></td>
+      <td class="text-center"><button onclick="editPermission('002')">修改</button></td>
+    </tr>
+    <tr>
+      <td>003</td>
+      <td>林淑芬</td>
+      <td><input type="checkbox" id="permission_003" checked disabled>
+          <label for="permission_003">客服管理</label></td>
+      <td class="text-center"><button onclick="editPermission('003')">修改</button></td>
+    </tr>
+    <tr>
+      <td>004</td>
+      <td>許雅婷</td>
+      <td><input type="checkbox" id="permission_004" checked disabled>
+          <label for="permission_004">教練管理</label></td>
+      <td class="text-center"><button onclick="editPermission('004')">修改</button></td>
+    </tr>
+    <tr>
+      <td>005</td>
+      <td>王建宏</td>
+      <td><input type="checkbox" id="permission_005" checked disabled>
+          <label for="permission_005">教練管理</label></td>
+      <td class="text-center"><button onclick="editPermission('005')">修改</button></td>
+    </tr>
+  </table>
+
+  <script>
+    function editPermission(employeeId) {
+      // TODO: Add code to handle permission editing for the specified employee
+      console.log("Editing permission for employee with ID: " + employeeId);
+    }
+  </script>
+</body>
+</html>

@@ -1,2 +1,2 @@
 # CHA101G7_Other
-formal git for frontend &amp; sql 
+formal git for sql  &amp; other file

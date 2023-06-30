@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- JQuery連結-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+  <!-- Datatable連結-->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+  <!-- RWD JS連結 -->
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+
+  <!-- RWD CSS連結 -->
+  <link rel="stylesheet" href=" https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+
+  <!-- CSS連結 -->
+  <link rel="stylesheet" href="/assets/css/dataTable.css">
+
+  <!-- bootstrap5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
+
+  <title>員工查詢</title>
+  <style>
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-row label {
+      margin-right: 10px;
+    }
+
+    .form-row input[type="text"] {
+      margin-right: 10px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <h1>查詢員工</h1>
+  <form>
+    <div class="form-row">
+      <label for="employeeId">員工編號:</label>
+      <input type="text" id="employeeId" name="employeeId" placeholder="輸入員工編號">
+      <button type="submit">查詢</button>
+    </div>
+  </form>
+  <br>
+  <form>
+    <div class="form-row">
+      <label for="employeeName">員工姓名:</label>
+      <input type="text" id="employeeName" name="employeeName" placeholder="輸入員工姓名">
+      <button type="submit">查詢</button>
+    </div>
+  </form>
+  <br>
+  <form id="searchAllEmployeesForm">
+    <div class="form-row">
+      <label for="searchAllEmployees">查詢所有員工:</label>
+      <button type="submit">查詢</button>
+    </div>
+  </form>
+
+
+  <div id="result"></div>
+
+
+  <script>
+    $(document).ready(function () {
+      // 當表單提交時觸發
+      $("#searchAllEmployeesForm").submit(function (e) {
+        e.preventDefault(); // 防止表單提交的默認行為
+
+        // 使用AJAX發送GET請求到後端處理查詢
+        $.ajax({
+          url: "backend_searchempview.html", // 請求的URL，替換為你的後端處理腳本
+          method: "GET",
+          success: function (response) {
+            // 在此處理後端返回的結果(response)
+            // 例如，你可以更新結果區域的內容
+            $("#result").html(response);
+          },
+          error: function (xhr, status, error) {
+            // 請求失敗時的錯誤處理
+            console.log(xhr.responseText);
+          }
+        });
+      });
+    });
+
+  </script>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>

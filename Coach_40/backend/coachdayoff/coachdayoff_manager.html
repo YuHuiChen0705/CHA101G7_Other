@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教練課程管理</title>
+    <!-- JQuery連結-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <!-- Datatable連結-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+    <!-- RWD JS連結 -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.4.1/js/dataTables.responsive.min.js"></script>
+
+    <!-- RWD CSS連結 -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.4.1/css/responsive.dataTables.min.css">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    <style>
+        body {
+            background-color: #fef8f0f9;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff0000;
+            padding: 0px 10px;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .user .name {
+            margin-right: 10px;
+            color: #5f5d5d;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #5f5d5d;
+            padding: 20px;
+        }
+
+
+        .sidebar h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .sidebar li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar li a:hover {
+            color: #aaa;
+        }
+
+        .submenu {
+            margin-left: 10px;
+        }
+
+        .submenu ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            background-color: #fff;
+            color: #000;
+            display: none;
+        }
+
+        .submenu li {
+            margin-bottom: 5px;
+        }
+
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+
+        table td {
+            width: 14.28%;
+            /* 每個欄位佔表格的 1/7 寬度 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .truncate {
+            max-width: 0;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 600;
+            transition: 0.3s ease-in;
+            border-radius: 6px;
+        }
+
+        .btn {
+            color: #fff;
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+
+        .btn:hover {
+            background-color: orange;
+        }
+
+        .btn.active {
+            background-color: orange;
+        }
+
+        .btn:focus {
+            background-color: orange;
+            outline-color: transparent;
+            outline-style: solid;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const headings = document.querySelectorAll('.sidebar h2');
+
+            headings.forEach((heading) => {
+                heading.addEventListener('click', (event) => {
+                    const subMenu = event.target.nextElementSibling;
+                    subMenu.style.display = subMenu.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Give Me Gym</div>
+        <div class="user">
+            <div class="name">User Name</div>
+            <button class="btn">登出</button>
+        </div>
+    </header>
+    <div class="body-Content" style="display: flex;">
+        <div class="sidebar">
+            <h1>首頁</h2>
+                <h2>員工管理</h2>
+                <ul>
+                    <li><a href="#">新增員工</a></li>
+                    <li><a href="#">查詢員工</a></li>
+                    <li><a href="#">員工權限</a></li>
+                </ul>
+
+                <h2>會員管理</h2>
+                <ul>
+                    <li><a href="#">新增會員</a></li>
+                    <li><a href="#">查詢會員</a></li>
+                    <li><a href="#">會員權限</a></li>
+                </ul>
+
+                <h2>商城管理</h2>
+                <ul>
+                    <li><a href="#">商品管理</a></li>
+                    <li><a href="#">訂單管理</a></li>
+                </ul>
+
+                <h2>教練管理</h2>
+                <ul>
+                    <li><a href="#">新增教練</a></li>
+                    <li><a href="#">查詢教練</a></li>
+                    <li><a href="#">教練班表</a></li>
+                </ul>
+
+                <h2>團課管理</h2>
+                <ul>
+                    <li><a href="#">新增團課</a></li>
+                    <li><a href="#">查詢團課</a></li>
+                    <li><a href="#">團課排班</a></li>
+                </ul>
+
+                <h2>客服管理</h2>
+                <ul>
+                    <li><a href="#">客戶查詢</a></li>
+                    <li><a href="#">訂單查詢</a></li>
+                    <li><a href="#">FAQ管理</a></li>
+                </ul>
+        </div>
+    <section class="py-99">
+        <div class="container">
+            <h3 class="text-dark mb-4">教練課程管理</h3>
+            <div class="card shadow">
+                <div class="card-header py-3">
+                    <p class="text-primary m-0 fw-bold">課程資訊</p>
+                </div>
+                
+                <div class="card-body">
+                    <div class="table-responsive table mt-2" id="dataTable" role="grid"
+                        aria-describedby="dataTable_info">
+                        <table id="myTable" class="table table-striped table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <!-- 欄位標題 -->
+                                    <th class="align-middle">會員編號</th>
+                                    <th class="align-middle">課程名稱</th>
+                                    <th class="align-middle">上課日期</th>
+                                    <th class="align-middle">上課時段</th>
+                                    <th class="align-middle">報名日期</th>
+                                    <th class="align-middle">課程狀態</th>
+                                    <th class="align-middle">修改</th>
+                                    <th class="align-middle">查詢教練課程訂單</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 填入表格內容 -->
+                                <tr>
+                                    <td>001</td>
+                                    <td>課程A</td>
+                                    <td>2023-06-01</td>
+                                    <td>10:00 AM - 12:00 PM</td>
+                                    <td>2023-05-28</td>
+                                    <td>已完成</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm edit-button">修改</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm">查詢</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>課程B</td>
+                                    <td>2023-06-05</td>
+                                    <td>2:00 PM - 4:00 PM</td>
+                                    <td>2023-05-30</td>
+                                    <td>進行中</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm edit-button">修改</button>
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-success btn-sm">查詢</button>
+                                    </td>
+                                </tr>
+                                <!-- 可以繼續加入更多的課程資訊 -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 編輯模態框 -->
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">編輯課程</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editForm">
+                        <div class="mb-3">
+                            <label for="courseName" class="form-label">課程名稱</label>
+                            <input type="text" class="form-control" id="courseName" name="courseName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseDate" class="form-label">上課日期</label>
+                            <input type="date" class="form-control" id="courseDate" name="courseDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseTime" class="form-label">上課時段</label>
+                            <input type="text" class="form-control" id="courseTime" name="courseTime" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="enrollmentDate" class="form-label">報名日期</label>
+                            <input type="date" class="form-control" id="enrollmentDate" name="enrollmentDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="courseStatus" class="form-label">課程狀態</label>
+                            <select class="form-select" id="courseStatus" name="courseStatus" required>
+                                <option value="已完成">已完成</option>
+                                <option value="進行中">進行中</option>
+                                <option value="未開始">未開始</option>
+                            </select>
+                        </div>
+                        <input type="hidden" id="memberId" name="memberId">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="saveChangesButton">保存更改</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 設定DataTable -->
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+
+        // 編輯按鈕點擊事件處理
+        $('.edit-button').click(function () {
+            var row = $(this).closest('tr');
+            var memberId = row.find('td:eq(0)').text();
+            var courseName = row.find('td:eq(1)').text();
+            var courseDate = row.find('td:eq(2)').text();
+            var courseTime = row.find('td:eq(3)').text();
+            var enrollmentDate = row.find('td:eq(4)').text();
+            var courseStatus = row.find('td:eq(5)').text();
+
+            $('#memberId').val(memberId);
+            $('#courseName').val(courseName);
+            $('#courseDate').val(courseDate);
+            $('#courseTime').val(courseTime);
+            $('#enrollmentDate').val(enrollmentDate);
+            $('#courseStatus').val(courseStatus);
+
+            $('#editModal').modal('show');
+        });
+
+        // 保存更改按鈕點擊事件處理
+        $('#saveChangesButton').click(function () {
+            var memberId = $('#memberId').val();
+            var courseName = $('#courseName').val();
+            var courseDate = $('#courseDate').val();
+            var courseTime = $('#courseTime').val();
+            var enrollmentDate = $('#enrollmentDate').val();
+            var courseStatus = $('#courseStatus').val();
+
+            // 執行保存更改的操作，例如發送 AJAX 請求更新數據庫
+
+            // 關閉編輯模態框
+            $('#editModal').modal('hide');
+        });
+    </script>
+</body>
+
+</html>

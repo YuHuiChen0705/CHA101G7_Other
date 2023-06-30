@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="assets/css/style-starter.css">
+
+<head>
+    <title>員工後台</title>
+    <style>
+        body {
+            background-color: #fef8f0f9;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .logo {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff0000;
+            padding: 0px 10px;
+
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+        }
+
+        .user .name {
+            margin-right: 10px;
+            color: #5f5d5d;
+        }
+
+        .sidebar {
+            width: 130px;
+            background-color: #5f5d5d;
+            opacity: 0.8;
+            padding: 10px 15px;
+            margin: 0px 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fef8f0f9;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .sidebar li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar li a:hover {
+            color: #aaa;
+        }
+
+        .submenu {
+            margin-left: 10px;
+        }
+
+        .submenu ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            background-color: #fff;
+            color: #000;
+            display: none;
+        }
+
+        .submenu li {
+            margin-bottom: 5px;
+        }
+
+        .btn-style {
+            padding: 10px 32px;
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 600;
+            transition: 0.3s ease-in;
+            border-radius: 6px;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #ff0000;
+            border-color: #ff0000;
+        }
+
+        .m-4 {
+            margin: 1.5rem !important;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const headings = document.querySelectorAll('.sidebar h2');
+
+            headings.forEach((heading) => {
+                heading.addEventListener('click', (event) => {
+                    const subMenu = event.target.nextElementSibling;
+                    subMenu.style.display = subMenu.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Give Me Gym</div>
+        <div class="user">
+            <div class="name">User Name </div>
+            <a class="btn btn-style btn-primary  mt-4">登出</a>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <h1>首頁</h1>
+
+        <h2>員工管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">新增員工</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">查詢員工</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">員工權限</a></li>
+        </ul>
+
+        <h2>會員管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">新增會員</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">查詢會員</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">會員權限</a></li>
+        </ul>
+
+        <h2>商城管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">商品管理</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">訂單管理</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">庫存管理</a></li>
+        </ul>
+
+        <h2>教練管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">教練名單</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">新增教練</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="">班表查看</a></li>
+        </ul>
+
+        <h2>團課管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">新增團課</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">查詢團課</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">團課排班</a></li>
+        </ul>
+
+        <h2>客服管理</h2>
+        <ul>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">客戶查詢</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">訂單查詢</a></li>
+            <li class="nav-item @@about__active"><a class="nav-link" href="#">FAQ管理</a></li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
